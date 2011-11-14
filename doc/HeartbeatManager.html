@@ -109,7 +109,7 @@ that indicates how the clients should respond to the heartbeat interval.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_members-instance_method" title="#add_members (instance method)">- (Object) <strong>add_members</strong>([:node], ) </a>
+      <a href="#add_members-instance_method" title="#add_members (instance method)">- (input) <strong>add_members</strong>([:node], ) </a>
     
 
     
@@ -133,7 +133,7 @@ an interface that supports adding new members to the heartbeat monitoring.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#heartbeat_log-instance_method" title="#heartbeat_log (instance method)">- (Object) <strong>heartbeat_log</strong>([:node], :time, :payload) </a>
+      <a href="#heartbeat_log-instance_method" title="#heartbeat_log (instance method)">- (output) <strong>heartbeat_log</strong>([:node], :time, :payload) </a>
     
 
     
@@ -157,7 +157,7 @@ an output interface that lists the nodes heartbeat responses.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#heartbeat_time-instance_method" title="#heartbeat_time (instance method)">- (Object) <strong>heartbeat_time</strong>([], :time) </a>
+      <a href="#heartbeat_time-instance_method" title="#heartbeat_time (instance method)">- (input) <strong>heartbeat_time</strong>([], :time) </a>
     
 
     
@@ -206,7 +206,7 @@ a channel that is used for the manager/client communication.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_members-instance_method" title="#remove_members (instance method)">- (Object) <strong>remove_members</strong>([:node], ) </a>
+      <a href="#remove_members-instance_method" title="#remove_members (instance method)">- (input) <strong>remove_members</strong>([:node], ) </a>
     
 
     
@@ -230,7 +230,7 @@ an interface that supports removing members from the heartbeat monitoring.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#unresponsive_nodes-instance_method" title="#unresponsive_nodes (instance method)">- (Object) <strong>unresponsive_nodes</strong>([:node], :last_heartbeat) </a>
+      <a href="#unresponsive_nodes-instance_method" title="#unresponsive_nodes (instance method)">- (output) <strong>unresponsive_nodes</strong>([:node], :last_heartbeat) </a>
     
 
     
@@ -264,7 +264,7 @@ immediately previous heartbeat interval.
       <div class="method_details first">
   <p class="signature first" id="add_members-instance_method">
   
-    - (<tt>Object</tt>) <strong>add_members</strong>([:node], ) 
+    - (<tt>input</tt>) <strong>add_members</strong>([:node], ) 
   
 
   
@@ -300,6 +300,19 @@ the client&#8217;s address
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -321,7 +334,7 @@ the client&#8217;s address
       <div class="method_details ">
   <p class="signature " id="heartbeat_log-instance_method">
   
-    - (<tt>Object</tt>) <strong>heartbeat_log</strong>([:node], :time, :payload) 
+    - (<tt>output</tt>) <strong>heartbeat_log</strong>([:node], :time, :payload) 
   
 
   
@@ -395,6 +408,19 @@ manager, in most cases a update of the nodes current  status.
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>output</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -416,7 +442,7 @@ manager, in most cases a update of the nodes current  status.
       <div class="method_details ">
   <p class="signature " id="heartbeat_time-instance_method">
   
-    - (<tt>Object</tt>) <strong>heartbeat_time</strong>([], :time) 
+    - (<tt>input</tt>) <strong>heartbeat_time</strong>([], :time) 
   
 
   
@@ -453,6 +479,19 @@ the heartbeat interval specified in tenths of a second.
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -544,6 +583,22 @@ the data/content of the message
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -565,7 +620,7 @@ the data/content of the message
       <div class="method_details ">
   <p class="signature " id="remove_members-instance_method">
   
-    - (<tt>Object</tt>) <strong>remove_members</strong>([:node], ) 
+    - (<tt>input</tt>) <strong>remove_members</strong>([:node], ) 
   
 
   
@@ -601,6 +656,19 @@ the client&#8217;s address
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -622,7 +690,7 @@ the client&#8217;s address
       <div class="method_details ">
   <p class="signature " id="unresponsive_nodes-instance_method">
   
-    - (<tt>Object</tt>) <strong>unresponsive_nodes</strong>([:node], :last_heartbeat) 
+    - (<tt>output</tt>) <strong>unresponsive_nodes</strong>([:node], :last_heartbeat) 
   
 
   
@@ -678,6 +746,19 @@ from the initialization of
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>output</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -701,7 +782,7 @@ from the initialization of
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 18:49:56 2011 by 
+  Generated on Sun Nov 13 19:44:02 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

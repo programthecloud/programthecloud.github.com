@@ -117,7 +117,7 @@ A module that requires counters should subclass SequencesProtocol.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#clear_ident-instance_method" title="#clear_ident (instance method)">- (Object) <strong>clear_ident</strong>([:ident], ) </a>
+      <a href="#clear_ident-instance_method" title="#clear_ident (instance method)">- (input) <strong>clear_ident</strong>([:ident], ) </a>
     
 
     
@@ -141,7 +141,7 @@ its initial value again, or no longer be in the collection of counters.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_count-instance_method" title="#get_count (instance method)">- (Object) <strong>get_count</strong>([:ident], ) </a>
+      <a href="#get_count-instance_method" title="#get_count (instance method)">- (input) <strong>get_count</strong>([:ident], ) </a>
     
 
     
@@ -165,7 +165,7 @@ request the count of an id.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#increment_count-instance_method" title="#increment_count (instance method)">- (Object) <strong>increment_count</strong>([:ident], ) </a>
+      <a href="#increment_count-instance_method" title="#increment_count (instance method)">- (input) <strong>increment_count</strong>([:ident], ) </a>
     
 
     
@@ -189,7 +189,7 @@ increment the counter for an id.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#return_count-instance_method" title="#return_count (instance method)">- (Object) <strong>return_count</strong>([:ident], :tally) </a>
+      <a href="#return_count-instance_method" title="#return_count (instance method)">- (output) <strong>return_count</strong>([:ident], :tally) </a>
     
 
     
@@ -219,7 +219,7 @@ increment the counter for an id.
       <div class="method_details first">
   <p class="signature first" id="clear_ident-instance_method">
   
-    - (<tt>Object</tt>) <strong>clear_ident</strong>([:ident], ) 
+    - (<tt>input</tt>) <strong>clear_ident</strong>([:ident], ) 
   
 
   
@@ -255,6 +255,19 @@ the unique identifier of a row in a collection of counts
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -276,7 +289,7 @@ the unique identifier of a row in a collection of counts
       <div class="method_details ">
   <p class="signature " id="get_count-instance_method">
   
-    - (<tt>Object</tt>) <strong>get_count</strong>([:ident], ) 
+    - (<tt>input</tt>) <strong>get_count</strong>([:ident], ) 
   
 
   
@@ -292,6 +305,19 @@ initialize the given id.
 </div>
 <div class="tags">
   
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -313,7 +339,7 @@ initialize the given id.
       <div class="method_details ">
   <p class="signature " id="increment_count-instance_method">
   
-    - (<tt>Object</tt>) <strong>increment_count</strong>([:ident], ) 
+    - (<tt>input</tt>) <strong>increment_count</strong>([:ident], ) 
   
 
   
@@ -328,6 +354,19 @@ increment the counter for an id. If the id does not exist, initialize it.
 </div>
 <div class="tags">
   
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -349,7 +388,7 @@ increment the counter for an id. If the id does not exist, initialize it.
       <div class="method_details ">
   <p class="signature " id="return_count-instance_method">
   
-    - (<tt>Object</tt>) <strong>return_count</strong>([:ident], :tally) 
+    - (<tt>output</tt>) <strong>return_count</strong>([:ident], :tally) 
   
 
   
@@ -399,6 +438,19 @@ count associated with the ident
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>output</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -422,7 +474,7 @@ count associated with the ident
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 18:49:56 2011 by 
+  Generated on Sun Nov 13 19:44:02 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

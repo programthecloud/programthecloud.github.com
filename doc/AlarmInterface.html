@@ -117,7 +117,7 @@ An alarm implementation should subclass AlarmInterface.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#alarm-instance_method" title="#alarm (instance method)">- (Object) <strong>alarm</strong>([:id], ) </a>
+      <a href="#alarm-instance_method" title="#alarm (instance method)">- (output) <strong>alarm</strong>([:id], ) </a>
     
 
     
@@ -141,7 +141,7 @@ Completed alarms are indicated by messages in this output.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_alarm-instance_method" title="#set_alarm (instance method)">- (Object) <strong>set_alarm</strong>([:id], :duration) </a>
+      <a href="#set_alarm-instance_method" title="#set_alarm (instance method)">- (input) <strong>set_alarm</strong>([:id], :duration) </a>
     
 
     
@@ -165,7 +165,7 @@ Used to set up a new alarm for a given duration.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#stop_alarm-instance_method" title="#stop_alarm (instance method)">- (Object) <strong>stop_alarm</strong>([:id], ) </a>
+      <a href="#stop_alarm-instance_method" title="#stop_alarm (instance method)">- (input) <strong>stop_alarm</strong>([:id], ) </a>
     
 
     
@@ -198,7 +198,7 @@ Used to terminate an alarm before it completes.
       <div class="method_details first">
   <p class="signature first" id="alarm-instance_method">
   
-    - (<tt>Object</tt>) <strong>alarm</strong>([:id], ) 
+    - (<tt>output</tt>) <strong>alarm</strong>([:id], ) 
   
 
   
@@ -213,6 +213,19 @@ Completed alarms are indicated by messages in this output.
 </div>
 <div class="tags">
   
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>output</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -234,7 +247,7 @@ Completed alarms are indicated by messages in this output.
       <div class="method_details ">
   <p class="signature " id="set_alarm-instance_method">
   
-    - (<tt>Object</tt>) <strong>set_alarm</strong>([:id], :duration) 
+    - (<tt>input</tt>) <strong>set_alarm</strong>([:id], :duration) 
   
 
   
@@ -287,6 +300,19 @@ the duration of the alarm, in tenths of a second
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -308,7 +334,7 @@ the duration of the alarm, in tenths of a second
       <div class="method_details ">
   <p class="signature " id="stop_alarm-instance_method">
   
-    - (<tt>Object</tt>) <strong>stop_alarm</strong>([:id], ) 
+    - (<tt>input</tt>) <strong>stop_alarm</strong>([:id], ) 
   
 
   
@@ -323,6 +349,19 @@ Used to terminate an alarm before it completes.
 </div>
 <div class="tags">
   
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -346,7 +385,7 @@ Used to terminate an alarm before it completes.
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 18:49:56 2011 by 
+  Generated on Sun Nov 13 19:44:02 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

@@ -113,7 +113,7 @@ FIFOQueueProtocol is the abstract interface for fifo queues
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#peek-instance_method" title="#peek (instance method)">- (peek_response) <strong>peek</strong>([:queue], ) </a>
+      <a href="#peek-instance_method" title="#peek (instance method)">- (peek_response, input) <strong>peek</strong>([:queue], ) </a>
     
 
     
@@ -137,7 +137,7 @@ Peek the top item in the queue.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#peek_response-instance_method" title="#peek_response (instance method)">- (Object) <strong>peek_response</strong>([:item, :queue], ) </a>
+      <a href="#peek_response-instance_method" title="#peek_response (instance method)">- (output) <strong>peek_response</strong>([:item, :queue], ) </a>
     
 
     
@@ -162,7 +162,7 @@ that was inserted into the queue.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pop-instance_method" title="#pop (instance method)">- (pop_response) <strong>pop</strong>([:queue], ) </a>
+      <a href="#pop-instance_method" title="#pop (instance method)">- (pop_response, input) <strong>pop</strong>([:queue], ) </a>
     
 
     
@@ -186,7 +186,7 @@ Pop items out of the queue.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pop_response-instance_method" title="#pop_response (instance method)">- (Object) <strong>pop_response</strong>([:item, :queue], ) </a>
+      <a href="#pop_response-instance_method" title="#pop_response (instance method)">- (output) <strong>pop_response</strong>([:item, :queue], ) </a>
     
 
     
@@ -211,7 +211,7 @@ inserted into the queue.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#push-instance_method" title="#push (instance method)">- (Object) <strong>push</strong>([:item, :queue], ) </a>
+      <a href="#push-instance_method" title="#push (instance method)">- (input) <strong>push</strong>([:item, :queue], ) </a>
     
 
     
@@ -244,7 +244,7 @@ Push items into the queue.
       <div class="method_details first">
   <p class="signature first" id="peek-instance_method">
   
-    - (<tt>peek_response</tt>) <strong>peek</strong>([:queue], ) 
+    - (<tt>peek_response</tt>, <tt>input</tt>) <strong>peek</strong>([:queue], ) 
   
 
   
@@ -299,6 +299,15 @@ when the peek request is successfully processed.
       
     </li>
   
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
 </ul>
 
 </div><table class="source_code">
@@ -321,7 +330,7 @@ when the peek request is successfully processed.
       <div class="method_details ">
   <p class="signature " id="peek_response-instance_method">
   
-    - (<tt>Object</tt>) <strong>peek_response</strong>([:item, :queue], ) 
+    - (<tt>output</tt>) <strong>peek_response</strong>([:item, :queue], ) 
   
 
   
@@ -375,6 +384,19 @@ specifies which queue to push the item in
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>output</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -396,7 +418,7 @@ specifies which queue to push the item in
       <div class="method_details ">
   <p class="signature " id="pop-instance_method">
   
-    - (<tt>pop_response</tt>) <strong>pop</strong>([:queue], ) 
+    - (<tt>pop_response</tt>, <tt>input</tt>) <strong>pop</strong>([:queue], ) 
   
 
   
@@ -451,6 +473,15 @@ when the pop request is successfully processed.
       
     </li>
   
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
 </ul>
 
 </div><table class="source_code">
@@ -473,7 +504,7 @@ when the pop request is successfully processed.
       <div class="method_details ">
   <p class="signature " id="pop_response-instance_method">
   
-    - (<tt>Object</tt>) <strong>pop_response</strong>([:item, :queue], ) 
+    - (<tt>output</tt>) <strong>pop_response</strong>([:item, :queue], ) 
   
 
   
@@ -527,6 +558,19 @@ specifies which queue to push the item in
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>output</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -548,7 +592,7 @@ specifies which queue to push the item in
       <div class="method_details ">
   <p class="signature " id="push-instance_method">
   
-    - (<tt>Object</tt>) <strong>push</strong>([:item, :queue], ) 
+    - (<tt>input</tt>) <strong>push</strong>([:item, :queue], ) 
   
 
   
@@ -603,6 +647,19 @@ specifies which queue to push the item in
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -626,7 +683,7 @@ specifies which queue to push the item in
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 18:49:55 2011 by 
+  Generated on Sun Nov 13 19:44:02 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

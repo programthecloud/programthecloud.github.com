@@ -116,7 +116,7 @@ Any implementation of a queue should subclass PriorityQueueProtocol
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#peek-instance_method" title="#peek (instance method)">- (peek_response) <strong>peek</strong>([:queue], ) </a>
+      <a href="#peek-instance_method" title="#peek (instance method)">- (peek_response, input) <strong>peek</strong>([:queue], ) </a>
     
 
     
@@ -140,7 +140,7 @@ Peek the top item in the queue.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pop-instance_method" title="#pop (instance method)">- (pop_response) <strong>pop</strong>([:queue], ) </a>
+      <a href="#pop-instance_method" title="#pop (instance method)">- (pop_response, input) <strong>pop</strong>([:queue], ) </a>
     
 
     
@@ -164,7 +164,7 @@ Pop items out of the queue.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#push-instance_method" title="#push (instance method)">- (Object) <strong>push</strong>([:item, :priority, :queue], ) </a>
+      <a href="#push-instance_method" title="#push (instance method)">- (input) <strong>push</strong>([:item, :priority, :queue], ) </a>
     
 
     
@@ -188,7 +188,7 @@ Push items into the queue.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove-instance_method" title="#remove (instance method)">- (remove_response) <strong>remove</strong>([:item, :queue], ) </a>
+      <a href="#remove-instance_method" title="#remove (instance method)">- (remove_response, input) <strong>remove</strong>([:item, :queue], ) </a>
     
 
     
@@ -221,7 +221,7 @@ Removes items out of the queue, regardless of priority.
       <div class="method_details first">
   <p class="signature first" id="peek-instance_method">
   
-    - (<tt>peek_response</tt>) <strong>peek</strong>([:queue], ) 
+    - (<tt>peek_response</tt>, <tt>input</tt>) <strong>peek</strong>([:queue], ) 
   
 
   
@@ -276,6 +276,15 @@ when the peek request is successfully processed.
       
     </li>
   
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
 </ul>
 
 </div><table class="source_code">
@@ -298,7 +307,7 @@ when the peek request is successfully processed.
       <div class="method_details ">
   <p class="signature " id="pop-instance_method">
   
-    - (<tt>pop_response</tt>) <strong>pop</strong>([:queue], ) 
+    - (<tt>pop_response</tt>, <tt>input</tt>) <strong>pop</strong>([:queue], ) 
   
 
   
@@ -354,6 +363,15 @@ when the pop request is successfully processed.
       
     </li>
   
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
 </ul>
 
 </div><table class="source_code">
@@ -376,7 +394,7 @@ when the pop request is successfully processed.
       <div class="method_details ">
   <p class="signature " id="push-instance_method">
   
-    - (<tt>Object</tt>) <strong>push</strong>([:item, :priority, :queue], ) 
+    - (<tt>input</tt>) <strong>push</strong>([:item, :priority, :queue], ) 
   
 
   
@@ -449,6 +467,19 @@ specifies which queue to push the item in
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -470,7 +501,7 @@ specifies which queue to push the item in
       <div class="method_details ">
   <p class="signature " id="remove-instance_method">
   
-    - (<tt>remove_response</tt>) <strong>remove</strong>([:item, :queue], ) 
+    - (<tt>remove_response</tt>, <tt>input</tt>) <strong>remove</strong>([:item, :queue], ) 
   
 
   
@@ -542,6 +573,15 @@ upon successful removal.
       
     </li>
   
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
 </ul>
 
 </div><table class="source_code">
@@ -566,7 +606,7 @@ upon successful removal.
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 18:49:55 2011 by 
+  Generated on Sun Nov 13 19:44:02 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

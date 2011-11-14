@@ -117,7 +117,7 @@ chosen DeliveryProtocol and MembershipProtocol.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mcast_done-instance_method" title="#mcast_done (instance method)">- (Object) <strong>mcast_done</strong>([:ident], ) </a>
+      <a href="#mcast_done-instance_method" title="#mcast_done (instance method)">- (output) <strong>mcast_done</strong>([:ident], ) </a>
     
 
     
@@ -141,7 +141,7 @@ Used to indicate that a new message has been delivered to all members.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mcast_send-instance_method" title="#mcast_send (instance method)">- (Object) <strong>mcast_send</strong>([:ident], :payload) </a>
+      <a href="#mcast_send-instance_method" title="#mcast_send (instance method)">- (input) <strong>mcast_send</strong>([:ident], :payload) </a>
     
 
     
@@ -175,7 +175,7 @@ Membership module.
       <div class="method_details first">
   <p class="signature first" id="mcast_done-instance_method">
   
-    - (<tt>Object</tt>) <strong>mcast_done</strong>([:ident], ) 
+    - (<tt>output</tt>) <strong>mcast_done</strong>([:ident], ) 
   
 
   
@@ -211,6 +211,19 @@ the unique id of the delivered message
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>output</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -232,7 +245,7 @@ the unique id of the delivered message
       <div class="method_details ">
   <p class="signature " id="mcast_send-instance_method">
   
-    - (<tt>Object</tt>) <strong>mcast_send</strong>([:ident], :payload) 
+    - (<tt>input</tt>) <strong>mcast_send</strong>([:ident], :payload) 
   
 
   
@@ -286,6 +299,19 @@ the message payload
   
 </ul>
 
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -309,7 +335,7 @@ the message payload
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 18:49:56 2011 by 
+  Generated on Sun Nov 13 19:44:02 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>
