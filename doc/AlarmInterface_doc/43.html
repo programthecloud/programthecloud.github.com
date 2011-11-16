@@ -1,0 +1,7 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 43</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">member</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">add_member</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">m</span><span class="punct">|</span>
+  <span class="punct">(</span><span class="attribute">@budtime</span> <span class="punct">==</span> <span class="number">0</span><span class="punct">)</span> <span class="punct">?</span> <span class="punct">(</span><span class="ident">m</span><span class="punct">)</span> <span class="punct">:</span> <span class="punct">(</span><span class="keyword">raise</span><span class="punct">(&quot;</span><span class="string">REJECT <span class="expr">#{m.inspect}</span> @ <span class="expr">#{@budtime}</span></span><span class="punct">&quot;))</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

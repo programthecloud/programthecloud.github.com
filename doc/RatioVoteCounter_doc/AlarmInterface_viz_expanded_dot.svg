@@ -1,0 +1,17 @@
+digraph G {
+	node [label="\N", fontname="Times-Roman", fontsize=18];
+	edge [fontname="Times-Roman", fontsize=18];
+	graph [bb="0,0,289,392"];
+	n_S [label="S ", penwidth=3, shape=diamond, URL="javascript:advanceTo(-2)", color=blue, pos="141,364", width="0.86111", height="0.77778"];
+	n_T [label="T ", penwidth=3, shape=diamond, URL="javascript:advanceTo(0)", color=blue, pos="141,28", width="0.88889", height="0.77778"];
+	n_set_alarm [label="set_alarm ", color=green, pos="64,280", width="1.7826", height="0.54997"];
+	n_stop_alarm [label="stop_alarm ", color=green, pos="218,280", width="1.978", height="0.54997"];
+	n_alarm [label="alarm ", color=green, pos="141,112", width="1.2061", height="0.54997"];
+	"n_??" [label="?? ", penwidth=2, shape=diamond, color=red, pos="141,196", width=1, height="0.77778"];
+	n_S -> n_set_alarm [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,81.15,299.26 127.23,348.34 118.27,338.79 106.21,325.95 95.018,314.03"];
+	n_S -> n_stop_alarm [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,200.85,299.26 154.77,348.34 163.73,338.79 175.79,325.95 186.98,314.03"];
+	n_alarm -> n_T [arrowsize=2, penwidth=5, color=green, minlen="1.5", pos="e,141,56.305 141,91.981 141,87.262 141,81.991 141,76.562"];
+	"n_??" -> n_alarm [arrowsize=2, penwidth=5, color=red, minlen="1.5", pos="e,141,131.91 141,167.7 141,162.65 141,157.29 141,151.98"];
+	n_set_alarm -> "n_??" [arrowsize=2, penwidth=5, color=green, minlen="1.5", pos="e,126.29,212.66 81.089,260.8 90.304,250.99 101.92,238.62 112.46,227.39"];
+	n_stop_alarm -> "n_??" [arrowsize=2, penwidth=5, color=green, minlen="1.5", pos="e,155.81,212.77 200.53,260.39 191.46,250.74 180.16,238.7 169.84,227.72"];
+}

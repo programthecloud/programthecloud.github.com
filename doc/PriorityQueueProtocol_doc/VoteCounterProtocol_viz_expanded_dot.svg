@@ -1,0 +1,17 @@
+digraph G {
+	node [label="\N", fontname="Times-Roman", fontsize=18];
+	edge [fontname="Times-Roman", fontsize=18];
+	graph [bb="0,0,287,392"];
+	n_S [label="S ", penwidth=3, shape=diamond, URL="javascript:advanceTo(-2)", color=blue, pos="147,364", width="0.86111", height="0.77778"];
+	n_T [label="T ", penwidth=3, shape=diamond, URL="javascript:advanceTo(0)", color=blue, pos="147,28", width="0.88889", height="0.77778"];
+	n_begin_vote [label="begin_vote ", color=green, pos="71,280", width="1.978", height="0.54997"];
+	n_result [label="result ", color=green, pos="147,112", width="1.1963", height="0.54997"];
+	n_cast_vote [label="cast_vote ", color=green, pos="224,280", width="1.7589", height="0.54997"];
+	"n_??" [label="?? ", penwidth=2, shape=diamond, color=red, pos="147,196", width=1, height="0.77778"];
+	n_S -> n_begin_vote [arrowsize=2, penwidth=5, minlen="1.5", pos="e,88.044,299.39 133.06,347.96 124.34,338.55 112.75,326.04 101.94,314.39"];
+	n_S -> n_cast_vote [arrowsize=2, penwidth=5, minlen="1.5", pos="e,206.85,299.26 160.77,348.34 169.73,338.79 181.79,325.95 192.98,314.03"];
+	n_result -> n_T [arrowsize=2, penwidth=5, minlen="1.5", pos="e,147,56.305 147,91.981 147,87.262 147,81.991 147,76.562"];
+	n_begin_vote -> "n_??" [arrowsize=2, penwidth=5, minlen="1.5", pos="e,132.38,212.77 88.246,260.39 97.191,250.74 108.35,238.7 118.53,227.72"];
+	n_cast_vote -> "n_??" [arrowsize=2, penwidth=5, minlen="1.5", pos="e,161.71,212.66 206.91,260.8 197.7,250.99 186.08,238.62 175.54,227.39"];
+	"n_??" -> n_result [arrowsize=2, penwidth=5, minlen="1.5", pos="e,147,131.91 147,167.7 147,162.65 147,157.29 147,151.98"];
+}

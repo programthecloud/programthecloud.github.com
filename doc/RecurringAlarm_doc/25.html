@@ -1,0 +1,7 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 25</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">total_counts</span> <span class="punct">&lt;</span> <span class="punct">(+</span><span class="ident">increment_count</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">u</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">u</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">,</span> <span class="number">1</span><span class="punct">]</span> <span class="keyword">unless</span> <span class="ident">total_counts</span><span class="punct">.</span><span class="ident">exists?</span> <span class="punct">{</span> <span class="punct">|</span><span class="ident">t</span><span class="punct">|</span> <span class="punct">(</span><span class="ident">u</span><span class="punct">.</span><span class="ident">ident</span> <span class="punct">==</span> <span class="ident">t</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">)</span> <span class="punct">}</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

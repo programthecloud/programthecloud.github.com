@@ -1,0 +1,9 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 8</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">alg_path</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">apj2</span><span class="punct">.</span><span class="ident">pro</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">p</span><span class="punct">,</span> <span class="ident">l</span><span class="punct">|</span>
+  <span class="keyword">unless</span> <span class="ident">in_prefix</span><span class="punct">(</span><span class="ident">p</span><span class="punct">.</span><span class="ident">head</span><span class="punct">,</span> <span class="ident">p</span><span class="punct">.</span><span class="ident">path</span><span class="punct">)</span> <span class="keyword">then</span>
+    <span class="punct">[</span><span class="ident">p</span><span class="punct">.</span><span class="ident">from</span><span class="punct">,</span> <span class="ident">p</span><span class="punct">.</span><span class="ident">head</span><span class="punct">,</span> <span class="punct">&quot;</span><span class="string"><span class="expr">#{p.path}</span>|<span class="expr">#{p.head}</span></span><span class="punct">&quot;,</span> <span class="ident">p</span><span class="punct">.</span><span class="ident">rule_id</span><span class="punct">,</span> <span class="ident">l</span><span class="punct">.</span><span class="ident">result</span><span class="punct">,</span> <span class="ident">p</span><span class="punct">.</span><span class="ident">lastop</span><span class="punct">]</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

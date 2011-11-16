@@ -1,0 +1,21 @@
+digraph G {
+	node [label="\N", fontname="Times-Roman", fontsize=18];
+	edge [fontname="Times-Roman", fontsize=18];
+	graph [bb="0,0,394,322"];
+	n_countdowns [label="countdowns N", shape=rect, URL="countdowns.html", color=yellow, pos="225,114", width="1.6944", height="0.5"];
+	n_alarm [label="alarm N", URL="alarm.html", color=yellow, pos="225,20", width="1.449", height="0.54997"];
+	n_stop_alarm [label="stop_alarm ", color=green, pos="71,208", width="1.978", height="0.54997"];
+	n_set_alarm [label="set_alarm ", color=green, pos="225,208", width="1.7826", height="0.54997"];
+	n_ticker [label="ticker ", color=green, pos="351,208", width="1.2061", height="0.54997"];
+	n_S [label="S ", shape=diamond, URL="javascript:advanceTo(-2)", color=blue, penwidth=3, pos="225,294", width="0.86111", height="0.77778"];
+	n_T [label="T ", shape=diamond, URL="javascript:advanceTo(0)", color=blue, penwidth=3, pos="306,294", width="0.88889", height="0.77778"];
+	n_countdowns -> n_countdowns [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="27.html", color=yellow, minlen="1.5", pos="e,286.28,105.95 286.28,122.05 286.44,122.03 286.61,122.02 286.77,122", lp="316.5,114"];
+	n_countdowns -> n_alarm [arrowsize=2, penwidth=5, URL="28.html", color=yellow, minlen="1.5", pos="e,223.79,39.815 223.83,95.919 223.49,90.222 223.17,83.84 223,78 222.83,72.1 222.78,69.134 223.07,59.881"];
+	n_alarm -> n_countdowns [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="29.html", color=yellow, minlen="1.5", pos="e,225,95.696 225,39.81 225,45.699 225,52.516 225,59.573", lp="237.5,68"];
+	n_stop_alarm -> n_countdowns [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="26.html", color=green, minlen="1.5", pos="e,196.42,132.07 99.966,189.7 118.42,178.67 142.99,163.99 165.47,150.56", lp="179.5,160"];
+	n_set_alarm -> n_countdowns [arrowsize=2, penwidth=5, URL="25.html", color=green, minlen="1.5", pos="e,225,132.18 225,187.94 225,177.67 225,164.65 225,152.45"];
+	n_ticker -> n_countdowns [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="27.html", color=green, minlen="1.5", pos="e,248.29,132.01 328.76,190.76 314.55,180.38 295.47,166.46 277.56,153.38", lp="311.5,160"];
+	n_S -> n_ticker [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,327.24,224.67 242.11,281.41 249.18,276.62 257.48,271.03 265,266 279.76,256.13 295.99,245.35 310.33,235.85"];
+	n_S -> n_set_alarm [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,225,228.01 225,265.96 225,260.26 225,254.13 225,248.08"];
+	n_S -> n_stop_alarm [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,102.04,225.93 206.12,282.7 184.73,271.04 149.06,251.58 119.73,235.58"];
+}

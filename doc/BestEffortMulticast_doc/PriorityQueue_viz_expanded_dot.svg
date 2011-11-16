@@ -1,0 +1,37 @@
+digraph G {
+	node [label="\N", fontname="Times-Roman", fontsize=18];
+	edge [fontname="Times-Roman", fontsize=18];
+	graph [bb="0,0,451,708"];
+	n_remove_response [label="remove_response N", URL="remove_response.html", color=yellow, pos="262,478", width="3.1408", height="0.54997"];
+	n_items [label="items N", URL="items.html", color=yellow, shape=rect, pos="229,364", width=1, height="0.5"];
+	n_pop_response [label="pop_response N", URL="pop_response.html", color=yellow, pos="128,114", width="2.6117", height="0.54997"];
+	n_lowest_popr [label="lowest_popr N", URL="lowest_popr.html", color=yellow, pos="87,192", width="2.4261", height="0.54997"];
+	n_pop [label="pop ", color=green, pos="84,536", width="0.92974", height="0.54997"];
+	n_lowest_peekr [label="lowest_peekr N", URL="lowest_peekr.html", color=yellow, pos="353,192", width="2.5643", height="0.54997"];
+	n_lowest [label="lowest N", URL="lowest.html", color=yellow, pos="289,288", width="1.597", height="0.54997"];
+	n_peek_response [label="peek_response N", URL="peek_response.html", color=yellow, pos="353,114", width="2.736", height="0.54997"];
+	n_push [label="push ", color=green, pos="167,536", width="1.0679", height="0.54997"];
+	n_peek [label="peek ", color=green, pos="399,420", width="1.0916", height="0.54997"];
+	n_remove [label="remove ", color=green, pos="250,594", width="1.4727", height="0.54997"];
+	n_S [label="S ", URL="javascript:advanceTo(-2)", color=blue, shape=diamond, penwidth=3, pos="195,680", width="0.86111", height="0.77778"];
+	n_T [label="T ", URL="javascript:advanceTo(0)", color=blue, shape=diamond, penwidth=3, pos="353,28", width="0.88889", height="0.77778"];
+	n_items -> n_remove_response [arrowsize=2, penwidth=5, URL="31.html", color=yellow, minlen="1.5", pos="e,251.05,458.26 230.75,382.04 232.33,394.7 235.12,412.61 244.16,439.36"];
+	n_pop_response -> n_items [label=" +/-", arrowsize=2, penwidth=5, URL="33.html", color=yellow, minlen="1.5", arrowhead=veeodot, pos="e,226.04,345.73 150.8,133.41 162.06,143.66 174.93,157.29 183,172 195.92,195.53 210.34,262.33 219.53,310.3", lp="219.5,240"];
+	n_pop -> n_lowest_popr [arrowsize=2, penwidth=5, URL="27.html", color=green, minlen="1.5", pos="e,85.712,212.07 83.732,516.04 83.436,493.42 83,454.45 83,421 83,421 83,421 83,287 83,268.94 83.746,248.95 84.594,232.06"];
+	n_lowest -> n_lowest_peekr [arrowsize=2, penwidth=5, URL="28.html", color=yellow, minlen="1.5", pos="e,340.16,211.85 301.64,268.43 309.4,257.04 319.57,242.1 328.82,228.51"];
+	n_lowest_peekr -> n_peek_response [arrowsize=2, penwidth=5, URL="30.html", color=yellow, minlen="1.5", arrowhead=veeodot, pos="e,353,133.91 353,171.82 353,171.28 353,170.73 353,170.17"];
+	n_lowest -> n_lowest_popr [arrowsize=2, penwidth=5, URL="27.html", color=yellow, minlen="1.5", pos="e,158.87,203.4 275.21,268.74 264.7,256.06 249.15,239.76 232,230 215.58,220.65 196.79,213.63 178.3,208.36"];
+	n_push -> n_items [arrowsize=2, penwidth=5, URL="25.html", color=green, minlen="1.5", pos="e,203.98,382.32 151.03,517.84 146.57,511.98 142.32,505.11 140,498 134.49,481.1 133.38,474.5 140,458 149.92,433.3 169.87,411.45 188.38\
+,395.15"];
+	n_remove_response -> n_items [label=" +/-", arrowsize=2, penwidth=5, URL="32.html", color=yellow, minlen="1.5", arrowhead=veeodot, pos="e,234.46,382.06 256.71,457.97 253.88,447.85 250.18,434.77 244.8,416.55", lp="264.5,420"];
+	n_peek -> n_lowest_peekr [arrowsize=2, penwidth=5, URL="28.html", color=green, minlen="1.5", pos="e,356.86,211.99 395.16,400.12 387.65,363.23 370.89,280.91 360.91,231.88"];
+	n_items -> n_lowest [arrowsize=2, penwidth=5, URL="26.html", color=yellow, minlen="1.5", arrowhead=veeodot, pos="e,274.11,307.36 242.92,345.84 245.54,342.59 248.41,339.06 251.38,335.4"];
+	n_lowest_popr -> n_pop_response [arrowsize=2, penwidth=5, URL="29.html", color=yellow, minlen="1.5", arrowhead=veeodot, pos="e,117.84,133.83 97.135,172.21 98.268,170.11 99.459,167.91 100.69,165.63"];
+	n_remove -> n_remove_response [arrowsize=2, penwidth=5, URL="31.html", color=green, minlen="1.5", pos="e,260.02,497.85 251.98,574.18 253.59,558.91 255.91,536.89 257.91,517.87"];
+	n_S -> n_pop [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,97.683,554.5 182.48,662.99 165.03,640.66 132.96,599.63 110.16,570.47"];
+	n_S -> n_push [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,170.75,556.03 190.44,655.87 186.17,634.24 179.72,601.53 174.67,575.89"];
+	n_S -> n_remove [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,237.93,613.43 206.13,662 212.11,652.86 219.72,641.24 226.92,630.25"];
+	n_S -> n_peek [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,397.25,439.89 216.5,670.97 241.69,660.74 283.57,641.09 312,614 355.93,572.14 361.83,554.49 384,498 388.72,485.97 392.01,472.27\
+ 394.27,459.8"];
+	n_peek_response -> n_T [arrowsize=2, penwidth=5, color=yellow, minlen="1.5", pos="e,353,56.267 353,93.939 353,88.633 353,82.623 353,76.453"];
+}

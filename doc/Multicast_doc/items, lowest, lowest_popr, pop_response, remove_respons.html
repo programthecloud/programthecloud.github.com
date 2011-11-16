@@ -1,0 +1,34 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<pre class="code">
+
+<span class="comment"># RULE 32</span>
+ 
+<span class="comment"># RULE 25</span>
+ 
+<span class="comment"># RULE 33</span>
+ 
+<span class="ident">items</span> <span class="punct">&lt;</span> <span class="punct">(-</span><span class="ident">pop_response</span><span class="punct">)</span>
+<span class="ident">items</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">push</span><span class="punct">)</span>
+<span class="ident">items</span> <span class="punct">&lt;</span> <span class="punct">(-</span><span class="ident">remove_response</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 26</span>
+ 
+<span class="ident">lowest</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">items</span><span class="punct">.</span><span class="ident">argmin</span><span class="punct">([</span><span class="symbol">:queue</span><span class="punct">],</span> <span class="symbol">:priority</span><span class="punct">))</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 27</span>
+ 
+<span class="ident">lowest_popr</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">pop</span> <span class="punct">*</span> <span class="ident">lowest</span><span class="punct">).</span><span class="ident">rights</span><span class="punct">(</span><span class="symbol">:queue</span> <span class="punct">=&gt;</span> <span class="symbol">:queue</span><span class="punct">))</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 29</span>
+ 
+<span class="ident">pop_response</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">lowest_popr</span><span class="punct">.</span><span class="ident">argagg</span><span class="punct">(</span><span class="symbol">:choose</span><span class="punct">,</span> <span class="punct">[</span><span class="symbol">:queue</span><span class="punct">,</span> <span class="symbol">:priority</span><span class="punct">],</span> <span class="symbol">:item</span><span class="punct">))</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 31</span>
+ 
+<span class="ident">remove_response</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">remove</span> <span class="punct">*</span> <span class="ident">items</span><span class="punct">).</span><span class="ident">rights</span><span class="punct">(</span><span class="symbol">:queue</span> <span class="punct">=&gt;</span> <span class="symbol">:queue</span><span class="punct">,</span> <span class="symbol">:item</span> <span class="punct">=&gt;</span> <span class="symbol">:item</span><span class="punct">))</span></pre>
+</body></html>

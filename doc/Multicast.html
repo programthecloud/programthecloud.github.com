@@ -74,14 +74,26 @@
     
   
   
+    <dt class="r2">Included in:</dt>
+    <dd class="r2"><span class='object_link'><a href="BestEffortMulticast.html" title="BestEffortMulticast (module)">BestEffortMulticast</a></span>, <span class='object_link'><a href="ReliableMulticast.html" title="ReliableMulticast (module)">ReliableMulticast</a></span></dd>
+    
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">multicast.degtiarsun.rb</dd>
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">multicast.rb</dd>
   
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<h2>Overview</h2>
+
+<embed src="Multicast_doc/Multicast_viz_expanded.svg" width="50%" height="30%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+
+
+Multicast
+
+<div class="docstring">
   <div class="discussion">
     <div class="note abstract">
   <strong>This module is abstract.</strong> 
@@ -119,6 +131,91 @@ and membership modules.
   
   
 
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#acked_count-instance_method" title="#acked_count (instance method)">- (Object) <strong>acked_count</strong>([:ident], :num) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A scratch of the number of messages confirmed this timestep for a given
+mcast id.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#num_members-instance_method" title="#num_members (instance method)">- (Object) <strong>num_members</strong>([], :num) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A scratch noting the number of members in this tick.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unacked_count-instance_method" title="#unacked_count (instance method)">- (Object) <strong>unacked_count</strong>([:ident], :num) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Keeps track of the number of messages that need to be confirmed as sent for
+a given mcast id.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
 
   
   
@@ -127,16 +224,183 @@ and membership modules.
   
   
   
-  <h2>Method Summary</h2>
+  
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="MulticastProtocol.html" title="MulticastProtocol (module)">MulticastProtocol</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="MulticastProtocol.html#mcast_done-instance_method" title="MulticastProtocol#mcast_done (method)">#mcast_done</a></span>, <span class='object_link'><a href="MulticastProtocol.html#mcast_send-instance_method" title="MulticastProtocol#mcast_send (method)">#mcast_send</a></span></p>
 
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="acked_count-instance_method">
+  
+    - (<tt>Object</tt>) <strong>acked_count</strong>([:ident], :num) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A scratch of the number of messages confirmed this timestep for a given
+mcast id.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'multicast.rb', line 30</span>
+
+<span class='scratch identifier id'>scratch</span> <span class='symbol val'>:acked_count</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:num</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="num_members-instance_method">
+  
+    - (<tt>Object</tt>) <strong>num_members</strong>([], :num) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A scratch noting the number of members in this tick.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'multicast.rb', line 30</span>
+
+<span class='scratch identifier id'>scratch</span> <span class='symbol val'>:num_members</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:num</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="unacked_count-instance_method">
+  
+    - (<tt>Object</tt>) <strong>unacked_count</strong>([:ident], :num) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Keeps track of the number of messages that need to be confirmed as sent for
+a given mcast id.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'multicast.rb', line 30</span>
+
+<span class='table identifier id'>table</span> <span class='symbol val'>:unacked_count</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:num</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 19:44:02 2011 by 
+  Generated on Wed Nov 16 11:20:24 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

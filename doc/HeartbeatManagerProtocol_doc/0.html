@@ -1,0 +1,10 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 0</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">rule_nm</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">t_depends</span><span class="punct">.</span><span class="ident">reduce</span><span class="punct">({})</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">memo</span><span class="punct">,</span> <span class="ident">i</span><span class="punct">|</span>
+  <span class="ident">tag</span> <span class="punct">=</span> <span class="ident">get_tag</span><span class="punct">(</span><span class="ident">i</span><span class="punct">.</span><span class="ident">nm</span><span class="punct">,</span> <span class="ident">i</span><span class="punct">.</span><span class="ident">op</span><span class="punct">)</span>
+  <span class="ident">memo</span><span class="punct">[</span><span class="ident">i</span><span class="punct">.</span><span class="ident">rule_id</span><span class="punct">]</span> <span class="punct">=</span> <span class="ident">tag</span> <span class="keyword">if</span> <span class="ident">memo</span><span class="punct">[</span><span class="ident">i</span><span class="punct">.</span><span class="ident">rule_id</span><span class="punct">].</span><span class="ident">nil?</span>
+  <span class="ident">memo</span><span class="punct">[</span><span class="ident">i</span><span class="punct">.</span><span class="ident">rule_id</span><span class="punct">]</span> <span class="punct">=</span> <span class="ident">tag</span> <span class="keyword">if</span> <span class="punct">((</span><span class="ident">tag</span> <span class="punct">==</span> <span class="symbol">:N</span><span class="punct">)</span> <span class="keyword">or</span> <span class="punct">(</span><span class="ident">tag</span> <span class="punct">==</span> <span class="symbol">:A</span><span class="punct">))</span>
+  <span class="ident">memo</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

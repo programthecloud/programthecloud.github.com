@@ -1,0 +1,9 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 17</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">lub</span> <span class="punct">&lt;</span> <span class="punct">(+</span><span class="ident">jlr</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">j</span><span class="punct">|</span>
+  <span class="keyword">unless</span> <span class="ident">lub</span><span class="punct">.</span><span class="ident">map</span> <span class="punct">{</span> <span class="punct">|</span><span class="ident">l</span><span class="punct">|</span> <span class="punct">[</span><span class="ident">l</span><span class="punct">.</span><span class="ident">left</span><span class="punct">,</span> <span class="ident">l</span><span class="punct">.</span><span class="ident">right</span><span class="punct">]</span> <span class="punct">}.</span><span class="ident">include?</span><span class="punct">([</span><span class="ident">j</span><span class="punct">.</span><span class="ident">left</span><span class="punct">,</span> <span class="ident">j</span><span class="punct">.</span><span class="ident">right</span><span class="punct">])</span> <span class="keyword">then</span>
+    <span class="punct">[</span><span class="ident">j</span><span class="punct">.</span><span class="ident">left</span><span class="punct">,</span> <span class="ident">j</span><span class="punct">.</span><span class="ident">right</span><span class="punct">,</span> <span class="ident">j</span><span class="punct">.</span><span class="ident">bound</span><span class="punct">]</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

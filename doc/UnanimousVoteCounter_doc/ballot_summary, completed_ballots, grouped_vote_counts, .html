@@ -1,0 +1,82 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<pre class="code">
+
+<span class="comment"># RULE 26</span>
+ 
+<span class="ident">ballot_summary</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">votes</span><span class="punct">.</span><span class="ident">group</span><span class="punct">([</span><span class="symbol">:ballot_id</span><span class="punct">],</span> <span class="ident">count</span><span class="punct">(</span><span class="symbol">:vote</span><span class="punct">),</span> <span class="ident">accum</span><span class="punct">(</span><span class="symbol">:vote</span><span class="punct">),</span> <span class="ident">accum</span><span class="punct">(</span><span class="symbol">:note</span><span class="punct">)))</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 28</span>
+ 
+<span class="ident">completed_ballots</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">ballot_summary</span> <span class="punct">*</span> <span class="ident">ongoing_ballots</span><span class="punct">).</span><span class="ident">pairs</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">,</span> <span class="symbol">:cnt</span> <span class="punct">=&gt;</span> <span class="symbol">:num_votes</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">s</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">b</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">num_votes</span><span class="punct">,</span> <span class="ident">s</span><span class="punct">.</span><span class="ident">votes</span><span class="punct">,</span> <span class="ident">s</span><span class="punct">.</span><span class="ident">notes</span><span class="punct">]</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 27</span>
+ 
+<span class="ident">grouped_vote_counts</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">votes</span><span class="punct">.</span><span class="ident">group</span><span class="punct">([</span><span class="symbol">:ballot_id</span><span class="punct">,</span> <span class="symbol">:vote</span><span class="punct">],</span> <span class="ident">count</span><span class="punct">))</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 39</span>
+ 
+<span class="ident">num_required</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">ratio</span> <span class="punct">*</span> <span class="ident">pre_ballots</span><span class="punct">).</span><span class="ident">pairs</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">r</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">r</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">,</span> <span class="punct">(</span><span class="ident">r</span><span class="punct">.</span><span class="ident">ratio</span> <span class="punct">*</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">num_votes</span><span class="punct">).</span><span class="ident">ceil</span><span class="punct">]</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 32</span>
+ 
+<span class="comment"># RULE 36</span>
+ 
+<span class="ident">ongoing_ballots</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">pre_ballots</span> <span class="punct">*</span> <span class="ident">required</span><span class="punct">).</span><span class="ident">pairs</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">p</span><span class="punct">,</span> <span class="ident">r</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">p</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">,</span> <span class="ident">p</span><span class="punct">.</span><span class="ident">num_votes</span><span class="punct">,</span> <span class="ident">r</span><span class="punct">.</span><span class="ident">num_required</span><span class="punct">]</span>
+<span class="keyword">end</span><span class="punct">)</span>
+<span class="ident">ongoing_ballots</span> <span class="punct">&lt;</span> <span class="punct">(-(</span><span class="ident">ongoing_ballots</span> <span class="punct">*</span> <span class="ident">result</span><span class="punct">).</span><span class="ident">lefts</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">))</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 37</span>
+ 
+<span class="comment"># RULE 35</span>
+ 
+<span class="ident">pre_ballots</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">begin_vote</span><span class="punct">)</span>
+<span class="ident">pre_ballots</span> <span class="punct">&lt;</span> <span class="punct">(-(</span><span class="ident">pre_ballots</span> <span class="punct">*</span> <span class="ident">ongoing_ballots</span><span class="punct">).</span><span class="ident">lefts</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">))</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 34</span>
+ 
+<span class="comment"># RULE 38</span>
+ 
+<span class="ident">required</span> <span class="punct">&lt;</span> <span class="punct">(-(</span><span class="ident">required</span> <span class="punct">*</span> <span class="ident">ongoing_ballots</span><span class="punct">).</span><span class="ident">lefts</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">))</span>
+<span class="ident">required</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">num_required</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 31</span>
+ 
+<span class="comment"># RULE 30</span>
+ 
+<span class="ident">result</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">completed_ballots</span> <span class="punct">*</span> <span class="ident">winning_vote</span><span class="punct">).</span><span class="ident">outer</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">b</span><span class="punct">,</span> <span class="ident">v</span><span class="punct">|</span>
+  <span class="keyword">unless</span> <span class="punct">(</span><span class="ident">b</span><span class="punct">.</span><span class="ident">ballot_id</span> <span class="punct">==</span> <span class="ident">v</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">)</span> <span class="keyword">then</span>
+    <span class="punct">[</span><span class="ident">b</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">,</span> <span class="symbol">:fail</span><span class="punct">,</span> <span class="constant">nil</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">votes</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">notes</span><span class="punct">]</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span><span class="punct">)</span>
+<span class="ident">result</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">ballot_summary</span> <span class="punct">*</span> <span class="ident">winning_vote</span><span class="punct">).</span><span class="ident">pairs</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">b</span><span class="punct">,</span> <span class="ident">v</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">b</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">,</span> <span class="symbol">:success</span><span class="punct">,</span> <span class="ident">v</span><span class="punct">.</span><span class="ident">vote</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">votes</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">notes</span><span class="punct">]</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 25</span>
+ 
+<span class="comment"># RULE 33</span>
+ 
+<span class="ident">votes</span> <span class="punct">&lt;</span> <span class="punct">(-(</span><span class="ident">votes</span> <span class="punct">*</span> <span class="ident">result</span><span class="punct">).</span><span class="ident">lefts</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">))</span>
+<span class="ident">votes</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">cast_vote</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 29</span>
+ 
+<span class="ident">winning_vote</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">ongoing_ballots</span> <span class="punct">*</span> <span class="ident">grouped_vote_counts</span><span class="punct">).</span><span class="ident">pairs</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">b</span><span class="punct">,</span> <span class="ident">gc</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">gc</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">,</span> <span class="ident">gc</span><span class="punct">.</span><span class="ident">vote</span><span class="punct">]</span> <span class="keyword">if</span> <span class="punct">(</span><span class="ident">gc</span><span class="punct">.</span><span class="ident">cnt</span> <span class="punct">&gt;=</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">num_required</span><span class="punct">)</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>
+</body></html>

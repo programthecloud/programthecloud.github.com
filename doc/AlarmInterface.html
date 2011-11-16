@@ -76,12 +76,22 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">alarm_interface.rb</dd>
+    <dd class="r2 last">alarm.rb<span class="defines">,<br />
+  alarm_interface.rb</span>
+</dd>
   
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<h2>Overview</h2>
+
+<embed src="AlarmInterface_doc/AlarmInterface_viz_expanded.svg" width="50%" height="30%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+
+
+AlarmInterface
+
+<div class="docstring">
   <div class="discussion">
     <div class="note abstract">
   <strong>This module is abstract.</strong> 
@@ -117,7 +127,7 @@ An alarm implementation should subclass AlarmInterface.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#alarm-instance_method" title="#alarm (instance method)">- (output) <strong>alarm</strong>([:id], ) </a>
+      <a href="#alarm-instance_method" title="#alarm (instance method)">- (output) <strong>alarm</strong>([:ident], ) </a>
     
 
     
@@ -141,7 +151,7 @@ Completed alarms are indicated by messages in this output.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_alarm-instance_method" title="#set_alarm (instance method)">- (input) <strong>set_alarm</strong>([:id], :duration) </a>
+      <a href="#set_alarm-instance_method" title="#set_alarm (instance method)">- (input) <strong>set_alarm</strong>([:ident], :duration) </a>
     
 
     
@@ -165,7 +175,7 @@ Used to set up a new alarm for a given duration.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#stop_alarm-instance_method" title="#stop_alarm (instance method)">- (input) <strong>stop_alarm</strong>([:id], ) </a>
+      <a href="#stop_alarm-instance_method" title="#stop_alarm (instance method)">- (input) <strong>stop_alarm</strong>([:ident], ) </a>
     
 
     
@@ -198,7 +208,7 @@ Used to terminate an alarm before it completes.
       <div class="method_details first">
   <p class="signature first" id="alarm-instance_method">
   
-    - (<tt>output</tt>) <strong>alarm</strong>([:id], ) 
+    - (<tt>output</tt>) <strong>alarm</strong>([:ident], ) 
   
 
   
@@ -236,9 +246,10 @@ Completed alarms are indicated by messages in this output.
 4</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'alarm_interface.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'alarm.rb', line 4</span>
 
-<span class='id interface'>interface</span> <span class='id output'>output</span><span class='comma'>,</span> <span class='symbol'>:alarm</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='output identifier id'>output</span><span class='comma token'>,</span> <span class='symbol val'>:alarm</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -247,7 +258,7 @@ Completed alarms are indicated by messages in this output.
       <div class="method_details ">
   <p class="signature " id="set_alarm-instance_method">
   
-    - (<tt>input</tt>) <strong>set_alarm</strong>([:id], :duration) 
+    - (<tt>input</tt>) <strong>set_alarm</strong>([:ident], :duration) 
   
 
   
@@ -266,7 +277,7 @@ Used to set up a new alarm for a given duration.
   
     <li>
       
-        <span class='name'>id</span>
+        <span class='name'>ident</span>
       
       
         <span class='type'>(<tt>Number</tt>)</span>
@@ -323,9 +334,10 @@ the duration of the alarm, in tenths of a second
 4</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'alarm_interface.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'alarm.rb', line 4</span>
 
-<span class='id interface'>interface</span> <span class='id input'>input</span><span class='comma'>,</span> <span class='symbol'>:set_alarm</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:duration</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:set_alarm</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:duration</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -334,7 +346,7 @@ the duration of the alarm, in tenths of a second
       <div class="method_details ">
   <p class="signature " id="stop_alarm-instance_method">
   
-    - (<tt>input</tt>) <strong>stop_alarm</strong>([:id], ) 
+    - (<tt>input</tt>) <strong>stop_alarm</strong>([:ident], ) 
   
 
   
@@ -372,9 +384,10 @@ Used to terminate an alarm before it completes.
 4</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'alarm_interface.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'alarm.rb', line 4</span>
 
-<span class='id interface'>interface</span> <span class='id input'>input</span><span class='comma'>,</span> <span class='symbol'>:stop_alarm</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:stop_alarm</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -385,7 +398,7 @@ Used to terminate an alarm before it completes.
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 19:44:02 2011 by 
+  Generated on Wed Nov 16 11:20:23 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

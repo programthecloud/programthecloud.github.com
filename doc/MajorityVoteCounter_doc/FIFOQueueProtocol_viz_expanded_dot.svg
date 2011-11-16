@@ -1,0 +1,23 @@
+digraph G {
+	node [label="\N", fontname="Times-Roman", fontsize=18];
+	edge [fontname="Times-Roman", fontsize=18];
+	graph [bb="0,0,367,392"];
+	n_S [label="S ", penwidth=3, shape=diamond, URL="javascript:advanceTo(-2)", color=blue, pos="180,364", width="0.86111", height="0.77778"];
+	n_T [label="T ", penwidth=3, shape=diamond, URL="javascript:advanceTo(0)", color=blue, pos="180,28", width="0.88889", height="0.77778"];
+	n_push [label="push ", color=green, pos="89,280", width="1.0679", height="0.54997"];
+	n_pop [label="pop ", color=green, pos="180,280", width="0.92974", height="0.54997"];
+	n_pop_response [label="pop_response ", color=green, pos="84,112", width="2.3452", height="0.54997"];
+	n_peek [label="peek ", color=green, pos="272,280", width="1.0916", height="0.54997"];
+	n_peek_response [label="peek_response ", color=green, pos="277,112", width="2.5071", height="0.54997"];
+	"n_??" [label="?? ", penwidth=2, shape=diamond, color=red, pos="180,196", width=1, height="0.77778"];
+	n_S -> n_pop [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,180,299.91 180,335.7 180,330.65 180,325.29 180,319.98"];
+	n_S -> n_push [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,107.51,297.68 164.97,349.46 153.53,339.15 137.33,324.55 122.82,311.48"];
+	n_S -> n_peek [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,253.29,297.68 195.19,349.46 206.89,339.04 223.5,324.23 238.28,311.06"];
+	n_peek_response -> n_T [arrowsize=2, penwidth=5, color=green, minlen="1.5", pos="e,195.88,42.424 254.99,92.393 242.05,81.457 225.49,67.455 211.22,55.393"];
+	n_pop_response -> n_T [arrowsize=2, penwidth=5, color=green, minlen="1.5", pos="e,164.12,42.561 105.31,92.802 118.09,81.882 134.58,67.797 148.81,55.641"];
+	n_pop -> "n_??" [arrowsize=2, penwidth=5, color=green, minlen="1.5", pos="e,180,224.3 180,259.98 180,255.26 180,249.99 180,244.56"];
+	n_peek -> "n_??" [arrowsize=2, penwidth=5, color=green, minlen="1.5", pos="e,196.43,211.65 253.38,262.41 241.38,251.71 225.47,237.53 211.53,225.11"];
+	"n_??" -> n_peek_response [arrowsize=2, penwidth=5, color=red, minlen="1.5", pos="e,255.19,131.43 196.9,180.72 208.65,170.78 224.79,157.14 239.5,144.7"];
+	n_push -> "n_??" [arrowsize=2, penwidth=5, color=green, minlen="1.5", pos="e,163.75,211.65 107.42,262.41 119.29,251.71 135.02,237.53 148.81,225.11"];
+	"n_??" -> n_pop_response [arrowsize=2, penwidth=5, color=red, minlen="1.5", pos="e,105.58,131.43 163.28,180.72 151.65,170.78 135.68,157.14 121.12,144.7"];
+}

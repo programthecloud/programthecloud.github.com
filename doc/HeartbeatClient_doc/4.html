@@ -1,0 +1,7 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 4</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">alg_path</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">clean_dep</span><span class="punct">.</span><span class="ident">pro</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">dep</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">dep</span><span class="punct">.</span><span class="ident">body</span><span class="punct">,</span> <span class="ident">dep</span><span class="punct">.</span><span class="ident">head</span><span class="punct">,</span> <span class="punct">&quot;</span><span class="string"><span class="expr">#{dep.body}</span>|<span class="expr">#{dep.head}</span></span><span class="punct">&quot;,</span> <span class="ident">dep</span><span class="punct">.</span><span class="ident">rule_id</span><span class="punct">,</span> <span class="ident">dep</span><span class="punct">.</span><span class="ident">tag</span><span class="punct">,</span> <span class="ident">dep</span><span class="punct">.</span><span class="ident">lastop</span><span class="punct">]</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

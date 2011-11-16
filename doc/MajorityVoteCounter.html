@@ -69,7 +69,7 @@
   
     
       <dt class="r1">Includes:</dt>
-      <dd class="r1"><span class='object_link'><a href="VoteCounterProtocol.html" title="VoteCounterProtocol (module)">VoteCounterProtocol</a></span></dd>
+      <dd class="r1"><span class='object_link'><a href="CountVoteCounter.html" title="CountVoteCounter (module)">CountVoteCounter</a></span></dd>
       
     
   
@@ -81,11 +81,19 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<h2>Overview</h2>
+
+<embed src="MajorityVoteCounter_doc/MajorityVoteCounter_viz_expanded.svg" width="50%" height="30%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+
+
+MajorityVoteCounter
+
+<div class="docstring">
   <div class="discussion">
     <p>
 MajorityVoteCounter is an implementation of the VoteCounterProtocol, where
-the number of votes needed for a majority is floor(ratio * num_members) + 1
+the number of votes needed for a majority is floor(0.5 * num_members) + 1
 </p>
 
 
@@ -97,7 +105,7 @@ the number of votes needed for a majority is floor(ratio * num_members) + 1
   <h3>See Also:</h3>
   <ul class="see">
     
-      <li><span class='object_link'><a href="" title="MajorityVoteCounter (module)">implements VoteCounterProtocol</a></span></li>
+      <li><span class='object_link'><a href="UnanimousVoteCounter.html" title="UnanimousVoteCounter (module)">extends CountVoteCounter</a></span></li>
     
   </ul>
 
@@ -107,8 +115,15 @@ the number of votes needed for a majority is floor(ratio * num_members) + 1
   
   
   
+  
+  
+  
+  
 
 
+  
+  
+  
   
   
   
@@ -121,6 +136,16 @@ the number of votes needed for a majority is floor(ratio * num_members) + 1
   
   <h2>Method Summary</h2>
   
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="CountVoteCounter.html" title="CountVoteCounter (module)">CountVoteCounter</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="CountVoteCounter.html#ballot_summary-instance_method" title="CountVoteCounter#ballot_summary (method)">#ballot_summary</a></span>, <span class='object_link'><a href="CountVoteCounter.html#completed_ballots-instance_method" title="CountVoteCounter#completed_ballots (method)">#completed_ballots</a></span>, <span class='object_link'><a href="CountVoteCounter.html#grouped_vote_counts-instance_method" title="CountVoteCounter#grouped_vote_counts (method)">#grouped_vote_counts</a></span>, <span class='object_link'><a href="CountVoteCounter.html#num_required-instance_method" title="CountVoteCounter#num_required (method)">#num_required</a></span>, <span class='object_link'><a href="CountVoteCounter.html#ongoing_ballots-instance_method" title="CountVoteCounter#ongoing_ballots (method)">#ongoing_ballots</a></span>, <span class='object_link'><a href="CountVoteCounter.html#winning_vote-instance_method" title="CountVoteCounter#winning_vote (method)">#winning_vote</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
   <h3 class="inherited">Methods included from <span class='object_link'><a href="VoteCounterProtocol.html" title="VoteCounterProtocol (module)">VoteCounterProtocol</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="VoteCounterProtocol.html#begin_vote-instance_method" title="VoteCounterProtocol#begin_vote (method)">#begin_vote</a></span>, <span class='object_link'><a href="VoteCounterProtocol.html#cast_vote-instance_method" title="VoteCounterProtocol#cast_vote (method)">#cast_vote</a></span>, <span class='object_link'><a href="VoteCounterProtocol.html#result-instance_method" title="VoteCounterProtocol#result (method)">#result</a></span></p>
 
@@ -128,7 +153,7 @@ the number of votes needed for a majority is floor(ratio * num_members) + 1
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 19:44:02 2011 by 
+  Generated on Wed Nov 16 11:20:24 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

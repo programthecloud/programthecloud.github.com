@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: CountVoteCounter
+  
+    &mdash; Documentation by YARD 0.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (C)</a> &raquo; 
+    
+    
+    <span class="title">CountVoteCounter</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: CountVoteCounter
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+      <dt class="r1">Includes:</dt>
+      <dd class="r1"><span class='object_link'><a href="VoteCounterProtocol.html" title="VoteCounterProtocol (module)">VoteCounterProtocol</a></span></dd>
+      
+    
+  
+  
+    <dt class="r2">Included in:</dt>
+    <dd class="r2"><span class='object_link'><a href="MajorityVoteCounter.html" title="MajorityVoteCounter (module)">MajorityVoteCounter</a></span>, <span class='object_link'><a href="RatioVoteCounter.html" title="RatioVoteCounter (module)">RatioVoteCounter</a></span></dd>
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">voting.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2>
+
+<embed src="CountVoteCounter_doc/CountVoteCounter_viz_expanded.svg" width="50%" height="30%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+
+
+CountVoteCounter
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+CountVoteCounter is an implementation of the VoteCounterProtocol in which a
+certain number of required votes for a &#8220;winning&#8221; candidate is
+provided  directly.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="" title="CountVoteCounter (module)">implements VoteCounterProtocol</a></span></li>
+    
+  </ul>
+
+</div>
+
+  
+  
+  
+  
+
+
+  
+  
+  
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ballot_summary-instance_method" title="#ballot_summary (instance method)">- (Object) <strong>ballot_summary</strong>([:ballot_id], :cnt, :votes, :notes) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Scratch to hold summary data for a ballot, including total number of votes
+cast, an array of those votes, and an array of notes.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#completed_ballots-instance_method" title="#completed_ballots (instance method)">- (Object) <strong>completed_ballots</strong>([:ballot_id, :num_votes, :votes, :notes], ) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Scratch to hold completed ballot_ids and accumulated data.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#grouped_vote_counts-instance_method" title="#grouped_vote_counts (instance method)">- (Object) <strong>grouped_vote_counts</strong>([:ballot_id, :vote, :cnt], ) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Scratch to hold number of votes cast for each vote/response for a ballot.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#num_required-instance_method" title="#num_required (instance method)">- (input) <strong>num_required</strong>([:ballot_id], :num_required) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+On the client side, tell the vote counter how many votes are required for a
+winning vote.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ongoing_ballots-instance_method" title="#ongoing_ballots (instance method)">- (Object) <strong>ongoing_ballots</strong>([:ballot_id], :num_votes, :num_required) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Table to keep track of ballots that 1) have been initialized via begin_vote
+and 2) have the required number of votes set. TODO: Include status of the
+ballot? (e.g. &#8216;in-progress&#8217;).
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#winning_vote-instance_method" title="#winning_vote (instance method)">- (Object) <strong>winning_vote</strong>([:ballot_id], :vote) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Scratch to hold the winning vote of a completed ballot, if one exists.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="VoteCounterProtocol.html" title="VoteCounterProtocol (module)">VoteCounterProtocol</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="VoteCounterProtocol.html#begin_vote-instance_method" title="VoteCounterProtocol#begin_vote (method)">#begin_vote</a></span>, <span class='object_link'><a href="VoteCounterProtocol.html#cast_vote-instance_method" title="VoteCounterProtocol#cast_vote (method)">#cast_vote</a></span>, <span class='object_link'><a href="VoteCounterProtocol.html#result-instance_method" title="VoteCounterProtocol#result (method)">#result</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="ballot_summary-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ballot_summary</strong>([:ballot_id], :cnt, :votes, :notes) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Scratch to hold summary data for a ballot, including total number of votes
+cast, an array of those votes, and an array of notes.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 42</span>
+
+<span class='scratch identifier id'>scratch</span> <span class='symbol val'>:ballot_summary</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:cnt</span><span class='comma token'>,</span> <span class='symbol val'>:votes</span><span class='comma token'>,</span> <span class='symbol val'>:notes</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="completed_ballots-instance_method">
+  
+    - (<tt>Object</tt>) <strong>completed_ballots</strong>([:ballot_id, :num_votes, :votes, :notes], ) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Scratch to hold completed ballot_ids and accumulated data.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 42</span>
+
+<span class='scratch identifier id'>scratch</span> <span class='symbol val'>:completed_ballots</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='comma token'>,</span> <span class='symbol val'>:num_votes</span><span class='comma token'>,</span> <span class='symbol val'>:votes</span><span class='comma token'>,</span> <span class='symbol val'>:notes</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="grouped_vote_counts-instance_method">
+  
+    - (<tt>Object</tt>) <strong>grouped_vote_counts</strong>([:ballot_id, :vote, :cnt], ) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Scratch to hold number of votes cast for each vote/response for a ballot.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 42</span>
+
+<span class='scratch identifier id'>scratch</span> <span class='symbol val'>:grouped_vote_counts</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='comma token'>,</span> <span class='symbol val'>:vote</span><span class='comma token'>,</span> <span class='symbol val'>:cnt</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="num_required-instance_method">
+  
+    - (<tt>input</tt>) <strong>num_required</strong>([:ballot_id], :num_required) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+On the client side, tell the vote counter how many votes are required for a
+winning vote. Note that the ballot must already be initialized via
+begin_vote before sending this in. winning vote (ex. unanimous = number of
+total votes)
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ballot_id</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the unique id of the ballot
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>num_required</span>
+      
+      
+        <span class='type'>(<tt>Number</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the number of votes required for a
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>input</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 42</span>
+
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:num_required</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:num_required</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ongoing_ballots-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ongoing_ballots</strong>([:ballot_id], :num_votes, :num_required) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Table to keep track of ballots that 1) have been initialized via begin_vote
+and 2) have the required number of votes set. TODO: Include status of the
+ballot? (e.g. &#8216;in-progress&#8217;)
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ballot_id</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the unique id of the ballot
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>num_votes</span>
+      
+      
+        <span class='type'>(<tt>Number</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+see :num_votes in begin_vote
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>num_required</span>
+      
+      
+        <span class='type'>(<tt>Number</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+number of votes required to declare a winner
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 42</span>
+
+<span class='table identifier id'>table</span> <span class='symbol val'>:ongoing_ballots</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:num_votes</span><span class='comma token'>,</span> <span class='symbol val'>:num_required</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="winning_vote-instance_method">
+  
+    - (<tt>Object</tt>) <strong>winning_vote</strong>([:ballot_id], :vote) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Scratch to hold the winning vote of a completed ballot, if one exists.
+<em>Note</em>: There can only be one winner for a ballot.  Duplicate key
+error will be thrown if num_required is set improperly such that there can
+be multiple winners. This constraint stems from the fact that the output
+interface result  has [:ballot_id] as its key, indicating  at most one
+winner per ballot_id.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 42</span>
+
+<span class='scratch identifier id'>scratch</span> <span class='symbol val'>:winning_vote</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:vote</span><span class='rbrack token'>]</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Wed Nov 16 11:20:23 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.3 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

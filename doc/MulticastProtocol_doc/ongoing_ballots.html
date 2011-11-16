@@ -1,0 +1,13 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<pre class="code">
+
+<span class="comment"># RULE 32</span>
+ 
+<span class="comment"># RULE 36</span>
+ 
+<span class="ident">ongoing_ballots</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">pre_ballots</span> <span class="punct">*</span> <span class="ident">required</span><span class="punct">).</span><span class="ident">pairs</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">p</span><span class="punct">,</span> <span class="ident">r</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">p</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">,</span> <span class="ident">p</span><span class="punct">.</span><span class="ident">num_votes</span><span class="punct">,</span> <span class="ident">r</span><span class="punct">.</span><span class="ident">num_required</span><span class="punct">]</span>
+<span class="keyword">end</span><span class="punct">)</span>
+<span class="ident">ongoing_ballots</span> <span class="punct">&lt;</span> <span class="punct">(-(</span><span class="ident">ongoing_ballots</span> <span class="punct">*</span> <span class="ident">result</span><span class="punct">).</span><span class="ident">lefts</span><span class="punct">(</span><span class="symbol">:ballot_id</span> <span class="punct">=&gt;</span> <span class="symbol">:ballot_id</span><span class="punct">))</span></pre>
+</body></html>

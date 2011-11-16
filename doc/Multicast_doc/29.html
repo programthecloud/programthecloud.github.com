@@ -1,0 +1,7 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 29</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">pipe_in</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">mcast_send</span> <span class="punct">*</span> <span class="ident">member</span><span class="punct">).</span><span class="ident">pairs</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">s</span><span class="punct">,</span> <span class="ident">m</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">m</span><span class="punct">.</span><span class="ident">host</span><span class="punct">,</span> <span class="ident">ip_port</span><span class="punct">,</span> <span class="ident">s</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">,</span> <span class="ident">s</span><span class="punct">.</span><span class="ident">payload</span><span class="punct">]</span> <span class="keyword">unless</span> <span class="punct">(</span><span class="ident">m</span><span class="punct">.</span><span class="ident">host</span> <span class="punct">==</span> <span class="ident">ip_port</span><span class="punct">)</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

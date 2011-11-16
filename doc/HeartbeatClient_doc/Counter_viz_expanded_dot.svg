@@ -1,0 +1,22 @@
+digraph G {
+	node [label="\N", fontname="Times-Roman", fontsize=18];
+	edge [fontname="Times-Roman", fontsize=18];
+	graph [bb="0,0,512,398"];
+	n_total_counts [label="total_counts N", shape=rect, URL="total_counts.html", color=yellow, pos="178,190", width="1.6944", height="0.5"];
+	n_increment_count [label="increment_count ", color=green, pos="411,284", width="2.8072", height="0.54997"];
+	n_return_count [label="return_count N", URL="return_count.html", color=yellow, pos="105,114", width="2.4834", height="0.54997"];
+	n_get_count [label="get_count ", color=green, pos="65,284", width="1.8161", height="0.54997"];
+	n_clear_ident [label="clear_ident ", color=green, pos="220,284", width="1.978", height="0.54997"];
+	n_S [label="S ", shape=diamond, URL="javascript:advanceTo(-2)", color=blue, penwidth=3, pos="220,370", width="0.86111", height="0.77778"];
+	n_T [label="T ", shape=diamond, URL="javascript:advanceTo(0)", color=blue, penwidth=3, pos="105,28", width="0.88889", height="0.77778"];
+	n_increment_count -> n_total_counts [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="25.html", color=green, minlen="1.5", pos="e,221.15,208.04 367.99,266.02 336.31,253.51 292.36,236.15 254.71,221.29", lp="327.5,236"];
+	n_total_counts -> n_total_counts [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="28.html", color=yellow, minlen="1.5", pos="e,239.28,183.7 239.28,196.3 239.44,196.29 239.61,196.27 239.77,196.26", lp="269.5,190"];
+	n_get_count -> n_return_count [arrowsize=2, penwidth=5, URL="27.html", color=green, minlen="1.5", pos="e,100.51,133.88 69.511,264.05 75.859,237.39 87.574,188.19 95.802,153.63"];
+	n_clear_ident -> n_total_counts [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="30.html", color=green, minlen="1.5", pos="e,185.84,208.18 211.3,263.94 208.19,257.14 204.54,249.13 200.8,240.95", lp="215.5,236"];
+	n_total_counts -> n_return_count [arrowhead=veeodot, arrowsize=2, penwidth=5, URL="27.html", color=yellow, minlen="1.5", pos="e,123.37,133.63 161.07,171.84 157.28,167.99 153.08,163.74 148.75,159.35"];
+	n_get_count -> n_total_counts [label=" +/-", arrowsize=2, penwidth=5, URL="26.html", color=green, minlen="1.5", pos="e,157.04,208.06 86.788,265.26 102.22,252.69 123.31,235.53 141.31,220.87", lp="147.5,236"];
+	n_S -> n_clear_ident [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,220,304.01 220,341.96 220,336.26 220,330.13 220,324.08"];
+	n_S -> n_get_count [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,95.503,301.53 201.3,358.87 179.67,347.14 143.2,327.38 113.43,311.25"];
+	n_S -> n_increment_count [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,371.51,302.37 240.44,360.01 267.11,348.28 314.89,327.27 353.11,310.46"];
+	n_return_count -> n_T [arrowsize=2, penwidth=5, color=yellow, minlen="1.5", pos="e,105,56.267 105,93.939 105,88.633 105,82.623 105,76.453"];
+}

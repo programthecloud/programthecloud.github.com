@@ -1,0 +1,39 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<pre class="code">
+
+<span class="comment"># RULE 32</span>
+ 
+<span class="ident">ack</span> <span class="punct">&lt;</span> <span class="punct">(</span><span class="ident">bed__pipe_out</span> <span class="punct">{</span> <span class="punct">|</span><span class="ident">p</span><span class="punct">|</span> <span class="punct">[</span><span class="ident">p</span><span class="punct">.</span><span class="ident">src</span><span class="punct">,</span> <span class="ident">p</span><span class="punct">.</span><span class="ident">dst</span><span class="punct">,</span> <span class="ident">p</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">]</span> <span class="punct">}.~)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 27</span>
+ 
+<span class="ident">bed__pipe_chan</span> <span class="punct">&lt;</span> <span class="punct">(</span><span class="ident">bed__pipe_in</span><span class="punct">.~)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 30</span>
+ 
+<span class="comment"># RULE 29</span>
+ 
+<span class="ident">bed__pipe_in</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">pipe_in</span><span class="punct">)</span>
+<span class="ident">bed__pipe_in</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">buf</span> <span class="punct">*</span> <span class="ident">clock</span><span class="punct">).</span><span class="ident">lefts</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 26</span>
+ 
+<span class="ident">bed__pipe_out</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">bed__pipe_chan</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 35</span>
+ 
+<span class="comment"># RULE 28</span>
+ 
+<span class="ident">buf</span> <span class="punct">&lt;=</span> <span class="punct">(</span><span class="ident">pipe_in</span><span class="punct">)</span>
+<span class="ident">buf</span> <span class="punct">&lt;</span> <span class="punct">(-</span><span class="ident">msg_acked</span><span class="punct">)</span></pre>
+<pre class="code">
+
+<span class="comment"># RULE 33</span>
+ 
+<span class="ident">msg_acked</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">buf</span> <span class="punct">*</span> <span class="ident">ack</span><span class="punct">).</span><span class="ident">lefts</span><span class="punct">(</span><span class="symbol">:ident</span> <span class="punct">=&gt;</span> <span class="symbol">:ident</span><span class="punct">))</span></pre>
+</body></html>

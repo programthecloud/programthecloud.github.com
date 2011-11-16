@@ -71,7 +71,7 @@
   
   
     <dt class="r1">Included in:</dt>
-    <dd class="r1"><span class='object_link'><a href="MajorityVoteCounter.html" title="MajorityVoteCounter (module)">MajorityVoteCounter</a></span>, <span class='object_link'><a href="RatioVoteCounter.html" title="RatioVoteCounter (module)">RatioVoteCounter</a></span></dd>
+    <dd class="r1"><span class='object_link'><a href="CountVoteCounter.html" title="CountVoteCounter (module)">CountVoteCounter</a></span></dd>
     
   
   
@@ -81,7 +81,15 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<h2>Overview</h2>
+
+<embed src="VoteCounterProtocol_doc/VoteCounterProtocol_viz_expanded.svg" width="50%" height="30%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+
+
+VoteCounterProtocol
+
+<div class="docstring">
   <div class="discussion">
     <div class="note abstract">
   <strong>This module is abstract.</strong> 
@@ -116,7 +124,7 @@ A vote counting protocol should subclass VoteCounterProtocol.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#begin_vote-instance_method" title="#begin_vote (instance method)">- (Object) <strong>begin_vote</strong>([:ballot_id], :num_votes) </a>
+      <a href="#begin_vote-instance_method" title="#begin_vote (instance method)">- (input) <strong>begin_vote</strong>([:ballot_id], :num_votes) </a>
     
 
     
@@ -141,7 +149,7 @@ specific ballot.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#cast_vote-instance_method" title="#cast_vote (instance method)">- (Object) <strong>cast_vote</strong>([:ballot_id, :vote, :note], ) </a>
+      <a href="#cast_vote-instance_method" title="#cast_vote (instance method)">- (input) <strong>cast_vote</strong>([:ballot_id, :agent, :vote, :note], ) </a>
     
 
     
@@ -155,7 +163,8 @@ specific ballot.
 
   
     <span class="summary_desc"><div class='inline'><p>
-On the client side, send votes to be counted.
+On the client side, send votes to be counted the vote TODO: Do we want to
+rename :vote to something less confusing?.
 </p>
 </div></span>
   
@@ -165,7 +174,7 @@ On the client side, send votes to be counted.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#result-instance_method" title="#result (instance method)">- (output) <strong>result</strong>([:ballot_id], :status, :result, :votes, :notes) </a>
+      <a href="#result-instance_method" title="#result (instance method)">- (output) <strong>result</strong>([:ballot_id], ) </a>
     
 
     
@@ -179,7 +188,7 @@ On the client side, send votes to be counted.
 
   
     <span class="summary_desc"><div class='inline'><p>
-Returns the result of the vote once.
+Returns the result of the vote once :vote field of cast_vote input.
 </p>
 </div></span>
   
@@ -198,7 +207,7 @@ Returns the result of the vote once.
       <div class="method_details first">
   <p class="signature first" id="begin_vote-instance_method">
   
-    - (<tt>Object</tt>) <strong>begin_vote</strong>([:ballot_id], :num_votes) 
+    - (<tt>input</tt>) <strong>begin_vote</strong>([:ballot_id], :num_votes) 
   
 
   
@@ -206,7 +215,7 @@ Returns the result of the vote once.
   <div class="discussion">
     <p>
 On the client side, tell the vote counter to start counting votes for a
-specific ballot.
+specific ballot. (this number will remain static throughout the vote)
 </p>
 
 
@@ -244,8 +253,7 @@ the unique id of the ballot
       
         &mdash;
         <div class='inline'><p>
-the number of votes that will be cast (this number will remain static
-throughout the vote)
+the number of votes that will be cast
 </p>
 </div>
       
@@ -259,12 +267,9 @@ throughout the vote)
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>input</tt>)</span>
       
       
-      
-        
-        <div class='inline'></div>
       
     </li>
   
@@ -276,12 +281,13 @@ throughout the vote)
       <pre class="lines">
 
 
-4</pre>
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'voting.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 7</span>
 
-<span class='id interface'>interface</span> <span class='id input'>input</span> <span class='symbol'>:begin_vote</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:ballot_id</span><span class='rbracket'>]</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:num_votes</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:begin_vote</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:num_votes</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -290,14 +296,15 @@ throughout the vote)
       <div class="method_details ">
   <p class="signature " id="cast_vote-instance_method">
   
-    - (<tt>Object</tt>) <strong>cast_vote</strong>([:ballot_id, :vote, :note], ) 
+    - (<tt>input</tt>) <strong>cast_vote</strong>([:ballot_id, :agent, :vote, :note], ) 
   
 
   
 </p><div class="docstring">
   <div class="discussion">
     <p>
-On the client side, send votes to be counted
+On the client side, send votes to be counted the vote TODO: Do we want to
+rename :vote to something less confusing?
 </p>
 
 
@@ -319,6 +326,23 @@ On the client side, send votes to be counted
         &mdash;
         <div class='inline'><p>
 the unique id of the ballot
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>agent</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+agent that is casting the vote
 </p>
 </div>
       
@@ -352,7 +376,7 @@ specific vote
       
         &mdash;
         <div class='inline'><p>
-any extra information to provide along with the vote
+any extra information to provide along with
 </p>
 </div>
       
@@ -366,12 +390,9 @@ any extra information to provide along with the vote
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>input</tt>)</span>
       
       
-      
-        
-        <div class='inline'></div>
       
     </li>
   
@@ -383,12 +404,13 @@ any extra information to provide along with the vote
       <pre class="lines">
 
 
-4</pre>
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'voting.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 7</span>
 
-<span class='id interface'>interface</span> <span class='id input'>input</span> <span class='symbol'>:cast_vote</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:ballot_id</span><span class='comma'>,</span> <span class='symbol'>:vote</span><span class='comma'>,</span> <span class='symbol'>:note</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:cast_vote</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='comma token'>,</span> <span class='symbol val'>:agent</span><span class='comma token'>,</span> <span class='symbol val'>:vote</span><span class='comma token'>,</span> <span class='symbol val'>:note</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -397,14 +419,14 @@ any extra information to provide along with the vote
       <div class="method_details ">
   <p class="signature " id="result-instance_method">
   
-    - (<tt>output</tt>) <strong>result</strong>([:ballot_id], :status, :result, :votes, :notes) 
+    - (<tt>output</tt>) <strong>result</strong>([:ballot_id], ) 
   
 
   
 </p><div class="docstring">
   <div class="discussion">
     <p>
-Returns the result of the vote once
+Returns the result of the vote once :vote field of cast_vote input
 </p>
 
 
@@ -459,7 +481,7 @@ status of the vote, :success, :fail, :error
       
         &mdash;
         <div class='inline'><p>
-outcome of the vote, contents depend on :vote field of cast_vote input
+outcome of the vote, contents depend on
 </p>
 </div>
       
@@ -493,7 +515,7 @@ an aggregate of all of the votes cast
       
         &mdash;
         <div class='inline'><p>
-an aggregte of all of the notes send
+an aggregate of all of the notes sent
 </p>
 </div>
       
@@ -521,12 +543,15 @@ an aggregte of all of the notes send
       <pre class="lines">
 
 
-4</pre>
+7
+8</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'voting.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 7</span>
 
-<span class='id interface'>interface</span> <span class='id output'>output</span><span class='comma'>,</span> <span class='symbol'>:result</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:ballot_id</span><span class='rbracket'>]</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:status</span><span class='comma'>,</span> <span class='symbol'>:result</span><span class='comma'>,</span> <span class='symbol'>:votes</span><span class='comma'>,</span> <span class='symbol'>:notes</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='output identifier id'>output</span><span class='comma token'>,</span> <span class='symbol val'>:result</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:status</span><span class='comma token'>,</span> <span class='symbol val'>:result</span><span class='comma token'>,</span> 
+<span class='symbol val'>:votes</span><span class='comma token'>,</span> <span class='symbol val'>:notes</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -537,7 +562,7 @@ an aggregte of all of the notes send
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 19:44:02 2011 by 
+  Generated on Wed Nov 16 11:20:23 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

@@ -1,0 +1,9 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 30</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">result</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">completed_ballots</span> <span class="punct">*</span> <span class="ident">winning_vote</span><span class="punct">).</span><span class="ident">outer</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">b</span><span class="punct">,</span> <span class="ident">v</span><span class="punct">|</span>
+  <span class="keyword">unless</span> <span class="punct">(</span><span class="ident">b</span><span class="punct">.</span><span class="ident">ballot_id</span> <span class="punct">==</span> <span class="ident">v</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">)</span> <span class="keyword">then</span>
+    <span class="punct">[</span><span class="ident">b</span><span class="punct">.</span><span class="ident">ballot_id</span><span class="punct">,</span> <span class="symbol">:fail</span><span class="punct">,</span> <span class="constant">nil</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">votes</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">.</span><span class="ident">notes</span><span class="punct">]</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

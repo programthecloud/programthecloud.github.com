@@ -1,0 +1,9 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<h1>Rule 2</h1><br>
+<pre class="code" style='font-size:20px'>
+<span class="ident">clean_dep</span> <span class="punct">&lt;=</span> <span class="punct">((</span><span class="ident">t_depends</span> <span class="punct">*</span> <span class="ident">rule_nm</span><span class="punct">).</span><span class="ident">pairs</span><span class="punct">(</span><span class="symbol">:rule_id</span> <span class="punct">=&gt;</span> <span class="symbol">:rule_id</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">dep</span><span class="punct">,</span> <span class="ident">rn</span><span class="punct">|</span>
+  <span class="keyword">unless</span> <span class="punct">(</span><span class="ident">dep</span><span class="punct">.</span><span class="ident">lhs</span> <span class="punct">==</span> <span class="punct">&quot;</span><span class="string">alg_path</span><span class="punct">&quot;)</span> <span class="keyword">then</span>
+    <span class="punct">[</span><span class="ident">dep</span><span class="punct">.</span><span class="ident">body</span><span class="punct">,</span> <span class="ident">dep</span><span class="punct">.</span><span class="ident">lhs</span><span class="punct">,</span> <span class="ident">dep</span><span class="punct">.</span><span class="ident">rule_id</span><span class="punct">,</span> <span class="ident">rn</span><span class="punct">.</span><span class="ident">tag</span><span class="punct">,</span> <span class="ident">dep</span><span class="punct">.</span><span class="ident">op</span><span class="punct">]</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>

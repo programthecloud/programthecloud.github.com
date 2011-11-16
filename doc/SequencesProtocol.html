@@ -76,12 +76,20 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">sequences-4.rb</dd>
+    <dd class="r2 last">sequences-5.rb</dd>
   
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<h2>Overview</h2>
+
+<embed src="SequencesProtocol_doc/SequencesProtocol_viz_expanded.svg" width="50%" height="30%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+
+
+SequencesProtocol
+
+<div class="docstring">
   <div class="discussion">
     <div class="note abstract">
   <strong>This module is abstract.</strong> 
@@ -278,9 +286,10 @@ the unique identifier of a row in a collection of counts
 7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'sequences-4.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'sequences-5.rb', line 7</span>
 
-<span class='id interface'>interface</span> <span class='id input'>input</span><span class='comma'>,</span> <span class='symbol'>:clear_ident</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:ident</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:clear_ident</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -328,9 +337,10 @@ initialize the given id.
 7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'sequences-4.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'sequences-5.rb', line 7</span>
 
-<span class='id interface'>interface</span> <span class='id input'>input</span><span class='comma'>,</span> <span class='symbol'>:get_count</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:ident</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:get_count</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -377,9 +387,10 @@ increment the counter for an id. If the id does not exist, initialize it.
 7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'sequences-4.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'sequences-5.rb', line 7</span>
 
-<span class='id interface'>interface</span> <span class='id input'>input</span><span class='comma'>,</span> <span class='symbol'>:increment_count</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:ident</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:increment_count</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -461,9 +472,10 @@ count associated with the ident
 7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'sequences-4.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'sequences-5.rb', line 7</span>
 
-<span class='id interface'>interface</span> <span class='id output'>output</span><span class='comma'>,</span> <span class='symbol'>:return_count</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:ident</span><span class='rbracket'>]</span><span class='op'>=&gt;</span><span class='lbracket'>[</span><span class='symbol'>:tally</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='output identifier id'>output</span><span class='comma token'>,</span> <span class='symbol val'>:return_count</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ident</span><span class='rbrack token'>]</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='lbrack token'>[</span><span class='symbol val'>:tally</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -474,7 +486,7 @@ count associated with the ident
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 19:44:02 2011 by 
+  Generated on Wed Nov 16 11:20:24 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

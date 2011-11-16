@@ -1,0 +1,23 @@
+<html><meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<head><link rel="stylesheet" type="text/css" href="style.css" /></head><body>
+<pre class="code">
+
+<span class="comment"># RULE 26</span>
+ 
+<span class="comment"># RULE 25</span>
+ 
+<span class="comment"># RULE 30</span>
+ 
+<span class="comment"># RULE 28</span>
+ 
+<span class="ident">total_counts</span> <span class="punct">&lt;</span> <span class="punct">(+-(</span><span class="ident">total_counts</span> <span class="punct">*</span> <span class="ident">increment_count</span><span class="punct">).</span><span class="ident">pairs</span><span class="punct">(</span><span class="symbol">:ident</span> <span class="punct">=&gt;</span> <span class="symbol">:ident</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">l</span><span class="punct">,</span> <span class="ident">r</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">l</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">,</span> <span class="punct">(</span><span class="ident">l</span><span class="punct">.</span><span class="ident">tally</span> <span class="punct">+</span> <span class="number">1</span><span class="punct">)]</span>
+<span class="keyword">end</span><span class="punct">)</span>
+<span class="ident">total_counts</span> <span class="punct">&lt;</span> <span class="punct">(-(</span><span class="ident">clear_ident</span> <span class="punct">*</span> <span class="ident">total_counts</span><span class="punct">).</span><span class="ident">rights</span><span class="punct">(</span><span class="symbol">:ident</span> <span class="punct">=&gt;</span> <span class="symbol">:ident</span><span class="punct">))</span>
+<span class="ident">total_counts</span> <span class="punct">&lt;</span> <span class="punct">(+</span><span class="ident">increment_count</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">u</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">u</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">,</span> <span class="number">1</span><span class="punct">]</span> <span class="keyword">unless</span> <span class="ident">total_counts</span><span class="punct">.</span><span class="ident">exists?</span> <span class="punct">{</span> <span class="punct">|</span><span class="ident">t</span><span class="punct">|</span> <span class="punct">(</span><span class="ident">u</span><span class="punct">.</span><span class="ident">ident</span> <span class="punct">==</span> <span class="ident">t</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">)</span> <span class="punct">}</span>
+<span class="keyword">end</span><span class="punct">)</span>
+<span class="ident">total_counts</span> <span class="punct">&lt;</span> <span class="punct">(+</span><span class="ident">get_count</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">u</span><span class="punct">|</span>
+  <span class="punct">[</span><span class="ident">u</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">,</span> <span class="number">0</span><span class="punct">]</span> <span class="keyword">unless</span> <span class="ident">total_counts</span><span class="punct">.</span><span class="ident">exists?</span> <span class="punct">{</span> <span class="punct">|</span><span class="ident">t</span><span class="punct">|</span> <span class="punct">(</span><span class="ident">u</span><span class="punct">.</span><span class="ident">ident</span> <span class="punct">==</span> <span class="ident">t</span><span class="punct">.</span><span class="ident">ident</span><span class="punct">)</span> <span class="punct">}</span>
+<span class="keyword">end</span><span class="punct">)</span></pre>
+</body></html>

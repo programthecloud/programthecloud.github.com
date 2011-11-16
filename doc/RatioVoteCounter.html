@@ -69,7 +69,7 @@
   
     
       <dt class="r1">Includes:</dt>
-      <dd class="r1"><span class='object_link'><a href="VoteCounterProtocol.html" title="VoteCounterProtocol (module)">VoteCounterProtocol</a></span></dd>
+      <dd class="r1"><span class='object_link'><a href="CountVoteCounter.html" title="CountVoteCounter (module)">CountVoteCounter</a></span></dd>
       
     
   
@@ -85,7 +85,15 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<h2>Overview</h2>
+
+<embed src="RatioVoteCounter_doc/RatioVoteCounter_viz_expanded.svg" width="50%" height="30%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+
+
+RatioVoteCounter
+
+<div class="docstring">
   <div class="discussion">
     <p>
 RatioVoteCounter is an implementation of the VoteCounterProtocol in which a
@@ -103,7 +111,7 @@ is rounded up, ex. votes_needed = ceil((ratio) * num_votes).
   <h3>See Also:</h3>
   <ul class="see">
     
-      <li><span class='object_link'><a href="" title="RatioVoteCounter (module)">implements VoteCounterProtocol</a></span></li>
+      <li><span class='object_link'><a href="" title="RatioVoteCounter (module)">extends CountVoteCounter</a></span></li>
     
   </ul>
 
@@ -113,8 +121,15 @@ is rounded up, ex. votes_needed = ceil((ratio) * num_votes).
   
   
   
+  
+  
+  
+  
 
 
+  
+  
+  
   
   
   
@@ -130,7 +145,7 @@ is rounded up, ex. votes_needed = ceil((ratio) * num_votes).
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ratio-instance_method" title="#ratio (instance method)">- (Object) <strong>ratio</strong>([:ballot_id], :ratio) </a>
+      <a href="#ratio-instance_method" title="#ratio (instance method)">- (input) <strong>ratio</strong>([:ballot_id], :ratio) </a>
     
 
     
@@ -162,6 +177,16 @@ On the client side, tell the vote counter what ratio to set.
   
   
   
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="CountVoteCounter.html" title="CountVoteCounter (module)">CountVoteCounter</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="CountVoteCounter.html#ballot_summary-instance_method" title="CountVoteCounter#ballot_summary (method)">#ballot_summary</a></span>, <span class='object_link'><a href="CountVoteCounter.html#completed_ballots-instance_method" title="CountVoteCounter#completed_ballots (method)">#completed_ballots</a></span>, <span class='object_link'><a href="CountVoteCounter.html#grouped_vote_counts-instance_method" title="CountVoteCounter#grouped_vote_counts (method)">#grouped_vote_counts</a></span>, <span class='object_link'><a href="CountVoteCounter.html#num_required-instance_method" title="CountVoteCounter#num_required (method)">#num_required</a></span>, <span class='object_link'><a href="CountVoteCounter.html#ongoing_ballots-instance_method" title="CountVoteCounter#ongoing_ballots (method)">#ongoing_ballots</a></span>, <span class='object_link'><a href="CountVoteCounter.html#winning_vote-instance_method" title="CountVoteCounter#winning_vote (method)">#winning_vote</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
   <h3 class="inherited">Methods included from <span class='object_link'><a href="VoteCounterProtocol.html" title="VoteCounterProtocol (module)">VoteCounterProtocol</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="VoteCounterProtocol.html#begin_vote-instance_method" title="VoteCounterProtocol#begin_vote (method)">#begin_vote</a></span>, <span class='object_link'><a href="VoteCounterProtocol.html#cast_vote-instance_method" title="VoteCounterProtocol#cast_vote (method)">#cast_vote</a></span>, <span class='object_link'><a href="VoteCounterProtocol.html#result-instance_method" title="VoteCounterProtocol#result (method)">#result</a></span></p>
 
@@ -173,15 +198,16 @@ On the client side, tell the vote counter what ratio to set.
       <div class="method_details first">
   <p class="signature first" id="ratio-instance_method">
   
-    - (<tt>Object</tt>) <strong>ratio</strong>([:ballot_id], :ratio) 
+    - (<tt>input</tt>) <strong>ratio</strong>([:ballot_id], :ratio) 
   
 
   
 </p><div class="docstring">
   <div class="discussion">
     <p>
-On the client side, tell the vote counter what ratio to set. This ratio
-must be set before the vote starts.
+On the client side, tell the vote counter what ratio to set. This  ratio
+must be set before the vote starts. votes needed for a candidate to
+&#8220;win&#8220;
 </p>
 
 
@@ -219,8 +245,7 @@ the unique id of the ballot
       
         &mdash;
         <div class='inline'><p>
-floating point number for the percentage of votes needed to
-&#8220;win&#8220;
+floating point number for the percentage of
 </p>
 </div>
       
@@ -234,12 +259,9 @@ floating point number for the percentage of votes needed to
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>input</tt>)</span>
       
       
-      
-        
-        <div class='inline'></div>
       
     </li>
   
@@ -251,12 +273,13 @@ floating point number for the percentage of votes needed to
       <pre class="lines">
 
 
-31</pre>
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'voting.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'voting.rb', line 186</span>
 
-<span class='id interface'>interface</span> <span class='id input'>input</span> <span class='symbol'>:ratio</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:ballot_id</span><span class='rbracket'>]</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:ratio</span><span class='rbracket'>]</span></pre>
+<span class='interface identifier id'>interface</span> <span class='input identifier id'>input</span><span class='comma token'>,</span> <span class='symbol val'>:ratio</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='symbol val'>:ballot_id</span><span class='rbrack token'>]</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='symbol val'>:ratio</span><span class='rbrack token'>]</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -267,7 +290,7 @@ floating point number for the percentage of votes needed to
 </div>
     
     <div id="footer">
-  Generated on Sun Nov 13 19:44:02 2011 by 
+  Generated on Wed Nov 16 11:20:23 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

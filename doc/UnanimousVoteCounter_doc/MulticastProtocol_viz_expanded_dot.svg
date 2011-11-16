@@ -1,0 +1,14 @@
+digraph G {
+	node [label="\N", fontname="Times-Roman", fontsize=18];
+	edge [fontname="Times-Roman", fontsize=18];
+	graph [bb="0,0,150,392"];
+	n_S [label="S ", penwidth=3, shape=diamond, URL="javascript:advanceTo(-2)", color=blue, pos="75,364", width="0.86111", height="0.77778"];
+	n_T [label="T ", penwidth=3, shape=diamond, URL="javascript:advanceTo(0)", color=blue, pos="75,28", width="0.88889", height="0.77778"];
+	n_mcast_send [label="mcast_send ", color=green, pos="75,280", width="2.059", height="0.54997"];
+	n_mcast_done [label="mcast_done ", color=green, pos="75,112", width="2.0925", height="0.54997"];
+	"n_??" [label="?? ", penwidth=2, shape=diamond, color=red, pos="75,196", width=1, height="0.77778"];
+	n_S -> n_mcast_send [arrowsize=2, penwidth=5, minlen="1.5", pos="e,75,299.91 75,335.7 75,330.65 75,325.29 75,319.98"];
+	n_mcast_done -> n_T [arrowsize=2, penwidth=5, minlen="1.5", pos="e,75,56.305 75,91.981 75,87.262 75,81.991 75,76.562"];
+	n_mcast_send -> "n_??" [arrowsize=2, penwidth=5, minlen="1.5", pos="e,75,224.3 75,259.98 75,255.26 75,249.99 75,244.56"];
+	"n_??" -> n_mcast_done [arrowsize=2, penwidth=5, minlen="1.5", pos="e,75,131.91 75,167.7 75,162.65 75,157.29 75,151.98"];
+}

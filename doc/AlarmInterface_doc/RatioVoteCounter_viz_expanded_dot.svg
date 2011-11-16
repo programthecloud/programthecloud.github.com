@@ -1,0 +1,50 @@
+digraph G {
+	node [label="\N", fontname="Times-Roman", fontsize=18];
+	edge [fontname="Times-Roman", fontsize=18];
+	graph [bb="0,0,749,836"];
+	n_votes [label="votes N", shape=rect, URL="votes.html", color=yellow, pos="419,608", width=1, height="0.5"];
+	n_result [label="result N", URL="result.html", color=yellow, pos="403,378", width="1.449", height="0.54997"];
+	n_ballot_summary [label="ballot_summary N", URL="ballot_summary.html", color=yellow, pos="320,494", width="2.9217", height="0.54997"];
+	n_required [label="required N", shape=rect, URL="required.html", color=yellow, pos="480,18", width="1.3056", height="0.5"];
+	n_ongoing_ballots [label="ongoing_ballots N", shape=rect, URL="ongoing_ballots.html", color=yellow, pos="403,284", width="2.0625", height="0.5"];
+	n_num_required [label="num_required N", URL="num_required.html", color=yellow, pos="354,94", width="2.6216", height="0.54997"];
+	n_pre_ballots [label="pre_ballots N", shape=rect, URL="pre_ballots.html", color=yellow, pos="354,190", width="1.5625", height="0.5"];
+	n_winning_vote [label="winning_vote N", URL="winning_vote.html", color=yellow, pos="643,190", width="2.6216", height="0.54997"];
+	n_completed_ballots [label="completed_ballots N", URL="completed_ballots.html", color=yellow, pos="163,190", width="3.2316", height="0.54997"];
+	n_cast_vote [label="cast_vote ", color=green, pos="314,722", width="1.7589", height="0.54997"];
+	n_grouped_vote_counts [label="grouped_vote_counts N", URL="grouped_vote_counts.html", color=yellow, pos="615,436", width="3.7271", height="0.54997"];
+	n_begin_vote [label="begin_vote ", color=green, pos="187,664", width="1.978", height="0.54997"];
+	n_ratio [label="ratio ", color=green, pos="38,552", width="1.0581", height="0.54997"];
+	n_S [label="S ", shape=diamond, URL="javascript:advanceTo(-2)", color=blue, penwidth=3, pos="187,808", width="0.86111", height="0.77778"];
+	n_T [label="T ", shape=diamond, URL="javascript:advanceTo(0)", color=blue, penwidth=3, pos="268,808", width="0.88889", height="0.77778"];
+	n_votes -> n_votes [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="33.html", color=yellow, minlen="1.5", pos="e,455.09,597.55 455.09,618.45 455.25,618.44 455.4,618.43 455.56,618.42", lp="485.5,608"];
+	n_ballot_summary -> n_result [arrowsize=2, penwidth=5, URL="31.html", color=yellow, minlen="1.5", pos="e,389.55,397.47 333.71,474.18 345.61,457.82 363.16,433.71 377.62,413.85"];
+	n_ongoing_ballots -> n_required [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="38.html", color=yellow, minlen="1.5", pos="e,481.59,36.12 421.91,265.79 435.59,252.11 453.15,231.73 462,210 479.95,165.95 483.47,111.6 483.08,72.154", lp="493.5,142"];
+	n_pre_ballots -> n_num_required [arrowsize=2, penwidth=5, URL="39.html", color=yellow, minlen="1.5", pos="e,354,114.07 354,171.76 354,161.3 354,147.5 354,134.49"];
+	n_num_required -> n_required [arrowsize=2, penwidth=5, URL="34.html", color=yellow, minlen="1.5", pos="e,450.65,36.239 384.5,75.087 399.11,66.509 416.92,56.047 433.19,46.492"];
+	n_winning_vote -> n_result [arrowhead=veeodot, arrowsize=2, penwidth=5, URL="30.html", color=yellow, minlen="1.5", pos="e,433.11,361.82 622.51,209.67 616.2,215.49 609.27,221.97 603,228 569.48,260.24 565.71,273.44 529,302 509.13,317.46 485.81,332.16\
+ 464.67,344.39"];
+	n_ongoing_ballots -> n_winning_vote [arrowsize=2, penwidth=5, URL="29.html", color=yellow, minlen="1.5", pos="e,603.44,208.12 477.57,267.59 496.41,262.48 516.3,256 534,248 548.6,241.4 550.04,235.86 564,228 570.76,224.19 577.97,220.43 585.19\
+,216.84"];
+	n_ongoing_ballots -> n_completed_ballots [arrowsize=2, penwidth=5, URL="28.html", color=yellow, minlen="1.5", pos="e,209.39,208.18 359.86,265.99 331.98,255.04 294.89,240.56 262,228 251.15,223.86 239.62,219.5 228.4,215.29"];
+	n_cast_vote -> n_votes [arrowsize=2, penwidth=5, URL="25.html", color=green, minlen="1.5", pos="e,403.01,626.05 331.34,702.51 347.06,685.74 370.56,660.67 389.27,640.71"];
+	n_required -> n_ongoing_ballots [arrowsize=2, penwidth=5, URL="36.html", color=yellow, minlen="1.5", pos="e,436.99,265.92 489.85,36.342 492.58,41.835 495.26,48.033 497,54 504.48,79.687 511.22,125.72 506,152 496.78,198.4 493.02,214.12 \
+460,248 457.92,250.13 455.69,252.19 453.36,254.16"];
+	n_grouped_vote_counts -> n_winning_vote [arrowsize=2, penwidth=5, URL="29.html", color=yellow, minlen="1.5", pos="e,640.81,210.06 617.2,415.85 621.78,375.94 632.42,283.17 638.51,230.1"];
+	n_ballot_summary -> n_completed_ballots [arrowsize=2, penwidth=5, URL="28.html", color=yellow, minlen="1.5", pos="e,172.82,209.88 310.18,474.11 284.63,424.96 215.73,292.42 182.05,227.65"];
+	n_pre_ballots -> n_ongoing_ballots [arrowsize=2, penwidth=5, URL="36.html", color=yellow, minlen="1.5", pos="e,398.79,265.99 369.99,208.16 374.96,214.12 380.15,221.06 384,228 387.23,233.82 390.06,240.28 392.47,246.68"];
+	n_votes -> n_grouped_vote_counts [arrowhead=veeodot, arrowsize=2, penwidth=5, URL="27.html", color=yellow, minlen="1.5", pos="e,597.98,455.74 448.84,589.95 457.53,584.56 466.87,578.35 475,572 510.18,544.53 546.36,509.44 573.12,481.91"];
+	n_begin_vote -> n_pre_ballots [arrowsize=2, penwidth=5, URL="35.html", color=green, minlen="1.5", pos="e,341.96,208.19 186.55,644.03 186.25,609.45 187.97,534.18 206,474 234.77,377.95 296.75,276.38 330.66,225.02"];
+	n_result -> n_votes [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="33.html", color=yellow, minlen="1.5", pos="e,423.92,589.72 411.11,397.85 418.76,416.71 429.67,446.76 434,474 438.18,500.3 435.61,529.71 431.5,554.17", lp="449.5,494"];
+	n_result -> n_ongoing_ballots [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="32.html", color=yellow, minlen="1.5", pos="e,403,302.18 403,357.94 403,352.04 403,345.22 403,338.18", lp="415.5,330"];
+	n_completed_ballots -> n_result [arrowhead=veeodot, arrowsize=2, penwidth=5, URL="30.html", color=yellow, minlen="1.5", pos="e,383.3,359.52 199.51,208.99 209.95,214.64 221.17,221.19 231,228 244.19,237.14 309.89,294.68 356.16,335.51"];
+	n_required -> n_required [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="38.html", color=yellow, minlen="1.5", pos="e,527.04,11.432 527.04,24.568 527.2,24.559 527.36,24.549 527.52,24.538", lp="557.5,18"];
+	n_pre_ballots -> n_pre_ballots [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="37.html", color=yellow, minlen="1.5", pos="e,410.46,181.49 410.46,198.51 410.62,198.49 410.78,198.47 410.94,198.45", lp="440.5,190"];
+	n_ongoing_ballots -> n_pre_ballots [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="37.html", color=yellow, minlen="1.5", pos="e,350.46,208.19 370.54,265.74 364.31,260.87 358.61,254.96 355,248 354.36,246.76 353.78,245.48 353.27,244.18", lp="367.5,238"];
+	n_votes -> n_ballot_summary [arrowhead=veeodot, arrowsize=2, penwidth=5, URL="26.html", color=yellow, minlen="1.5", pos="e,336.5,513.67 403.96,589.99 392.39,576.9 375.83,558.16 360.47,540.78"];
+	n_ongoing_ballots -> n_ongoing_ballots [label=" +/-", arrowhead=veeodot, arrowsize=2, penwidth=5, URL="32.html", color=yellow, minlen="1.5", pos="e,477.36,276.26 477.36,291.74 477.53,291.72 477.69,291.7 477.85,291.68", lp="507.5,284"];
+	n_ratio -> n_num_required [arrowsize=2, penwidth=5, URL="39.html", color=green, minlen="1.5", pos="e,267.47,102.08 32.64,532.22 26.716,509.76 18,470.96 18,437 18,437 18,437 18,189 18,140.6 148.94,116 247.34,104.34"];
+	n_S -> n_begin_vote [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,187,684.21 187,779.96 187,758.63 187,728.57 187,704.54"];
+	n_S -> n_ratio [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,47.078,571.52 175.37,790.2 159.33,766.8 129.82,722.89 107,684 88.649,652.73 69.573,616.15 56.143,589.61"];
+	n_S -> n_cast_vote [arrowsize=2, penwidth=5, color=blue, minlen="1.5", pos="e,287.67,740.12 204.09,795.39 211.17,790.6 219.47,785.01 227,780 241.11,770.61 256.57,760.45 270.5,751.33"];
+}

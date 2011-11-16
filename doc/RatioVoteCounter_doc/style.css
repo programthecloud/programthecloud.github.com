@@ -1,0 +1,23 @@
+pre.code {
+  padding: 1ex 1ex 1ex 1ex;
+  border: 4px groove #CC0000;
+  overflow-x: auto;
+}
+
+pre.code span.attribute { color: #009900; }
+pre.code span.char { color: #F00; }
+pre.code span.class { color: #A020F0; font-weight: bold; }
+pre.code span.comment { color: #0000FF; }
+pre.code span.constant { color: #008B8B; }
+pre.code span.escape { color: #6A5ACD; }
+pre.code span.expr { color: #2222CC; }
+pre.code span.global { color: #11AA44; }
+pre.code span.ident { color: #000000; }
+pre.code span.keyword { color: #A52A2A; font-weight: bold; }
+pre.code span.method { color: #008B8B; }
+pre.code span.module { color: #A020F0; font-weight: bold; }
+pre.code span.number { color: #DD00DD; }
+pre.code span.punct { color: #6A5ACD; }
+pre.code span.regex { color: #DD00DD; }
+pre.code span.string { color: #DD00DD; }
+pre.code span.symbol { color: #008B8B; }
